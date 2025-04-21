@@ -1,0 +1,65 @@
+---
+import ServiceCard from "../components/ServiceCard.astro";
+import FAQ from "../components/FAQ.astro";
+import { services } from "../data/services";
+
+const faqItems = [
+  {
+    question: "¿Cómo contrato un servicio?",
+    answer: "Contáctanos por WhatsApp, correo o el formulario y te ayudaremos a elegir la mejor opción."
+  },
+  {
+    question: "¿Puedo pedir un desarrollo a medida?",
+    answer: "¡Por supuesto! Especializamos en soluciones personalizadas para cada cliente."
+  },
+  {
+    question: "¿Qué formas de pago aceptan?",
+    answer: "Puedes pagar por transferencia, tarjeta o PayPal."
+  }
+];
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Catálogo de Servicios Web</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
+    <style>
+      html { font-family: 'Inter', sans-serif; }
+    </style>
+  </head>
+  <body class="bg-gradient-to-br from-blue-50 via-white to-cyan-100 min-h-screen font-sans">
+    <header class="relative bg-gradient-to-r from-blue-700 to-cyan-600 text-white py-10 mb-12 shadow-lg animate-fade-in">
+      <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80" alt="Web Services" class="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none rounded-b-3xl" loading="lazy" />
+      <div class="relative max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center px-4 z-10">
+        <h1 class="text-3xl sm:text-4xl font-black drop-shadow-lg text-white tracking-tight animate-slide-in">Catálogo de Servicios Web</h1>
+        <a href="https://wa.me/tu-numero" target="_blank" class="mt-4 sm:mt-0 bg-green-500 px-6 py-3 rounded-full shadow-lg hover:bg-green-600 transition-colors font-bold text-lg animate-pop">WhatsApp</a>
+      </div>
+    </header>
+    <main class="max-w-5xl mx-auto px-4">
+      <section>
+        <h2 class="text-2xl font-extrabold mb-8 text-center text-blue-800 animate-fade-in">Nuestros Servicios</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map(service => (
+            <ServiceCard {...service} />
+          ))}
+        </div>
+      </section>
+      <FAQ items={faqItems} />
+    </main>
+    <footer class="text-center text-gray-500 py-10 mt-12 text-base animate-fade-in">
+      <span class="font-semibold">© {new Date().getFullYear()} Catálogo de Servicios Web.</span> Todos los derechos reservados.
+    </footer>
+    <a href="mailto:contacto@tucorreo.com" class="fixed bottom-6 right-6 bg-gradient-to-r from-blue-700 to-cyan-600 text-white px-6 py-3 rounded-full shadow-lg hover:from-cyan-700 hover:to-blue-900 transition-all font-bold animate-pop">Contáctanos</a>
+    <style>
+      @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+      .animate-fade-in { animation: fade-in 1.2s ease; }
+      @keyframes slide-in { from { transform: translateY(-20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+      .animate-slide-in { animation: slide-in 1s cubic-bezier(.4,2,.6,1) 0.2s both; }
+      @keyframes pop { 0% { transform: scale(0.9); } 60% { transform: scale(1.05); } 100% { transform: scale(1); } }
+      .animate-pop { animation: pop 0.7s cubic-bezier(.4,2,.6,1); }
+    </style>
+  </body>
+</html>

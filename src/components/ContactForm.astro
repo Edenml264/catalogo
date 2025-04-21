@@ -1,0 +1,75 @@
+---
+const { serviceTitle } = Astro.props;
+let sent = false;
+let error = '';
+---
+<form id="contact-form" class="bg-white rounded-2xl shadow-lg p-8 space-y-6 animate-fade-in mt-8">
+  <h3 class="text-xl font-bold text-blue-700 mb-2">Solicita información sobre {serviceTitle}</h3>
+  <div id="form-error" class="text-red-500 text-sm mb-2" style="display:none"></div>
+  <div id="form-success" class="text-green-600 font-semibold mb-2" style="display:none">¡Gracias! Te responderemos pronto.</div>
+
+  <input
+    id="contact-name"
+    type="text"
+    class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-cyan-200 outline-none"
+    placeholder="Nombre"
+    required
+  />
+  <input
+    id="contact-email"
+    type="email"
+    class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-cyan-200 outline-none"
+    placeholder="Correo electrónico"
+    required
+  />
+  <textarea
+    id="contact-message"
+    class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-cyan-200 outline-none"
+    placeholder="¿En qué podemos ayudarte?"
+    rows="4"
+    required
+  ></textarea>
+  <button
+    type="submit"
+    class="w-full bg-gradient-to-r from-blue-700 to-cyan-600 text-white font-bold py-2 rounded-full shadow hover:from-cyan-700 hover:to-blue-900 transition-all"
+  >
+    Enviar
+  </button>
+</form>
+<script>
+  if (typeof window !== 'undefined') {
+    const form = document.getElementById('contact-form') as HTMLFormElement | null;
+    if (form) {
+      form.onsubmit = function (e) {
+        e.preventDefault();
+        const nameInput = document.getElementById('contact-name') as HTMLInputElement | null;
+        const emailInput = document.getElementById('contact-email') as HTMLInputElement | null;
+        const messageInput = document.getElementById('contact-message') as HTMLTextAreaElement | null;
+        const errorDiv = document.getElementById('form-error') as HTMLDivElement | null;
+        const successDiv = document.getElementById('form-success') as HTMLDivElement | null;
+
+        if (errorDiv) errorDiv.style.display = 'none';
+        if (successDiv) successDiv.style.display = 'none';
+
+        const name = nameInput?.value.trim() || '';
+        const email = emailInput?.value.trim() || '';
+        const message = messageInput?.value.trim() || '';
+
+        if (!name || !email || !message) {
+          if (errorDiv) {
+            errorDiv.textContent = 'Por favor, completa todos los campos.';
+            errorDiv.style.display = 'block';
+          }
+          return;
+        }
+        // Aquí podrías integrar un servicio real de envío (Formspree, EmailJS, etc.)
+        if (successDiv) successDiv.style.display = 'block';
+        if (form) form.reset();
+      };
+    }
+  }
+</script>
+<style>
+  @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+  .animate-fade-in { animation: fade-in 1.2s ease; }
+</style>
