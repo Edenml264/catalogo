@@ -1,0 +1,35 @@
+---
+import CotizadorNuevo from '../components/CotizadorNuevo.astro';
+
+// Obtener el servicio de la URL si existe
+const servicio = Astro.url.searchParams.get('servicio') || '';
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Cotizador Web | Catálogo de Servicios</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
+    <style>
+      html { font-family: 'Inter', sans-serif; }
+      body { background: #f7fafc; }
+    </style>
+  </head>
+  <body class="bg-gradient-to-br from-blue-50 via-white to-cyan-100 min-h-screen font-sans">
+    <header class="bg-gradient-to-r from-blue-700 to-cyan-600 text-white py-8 mb-10 shadow-lg">
+      <div class="max-w-3xl mx-auto px-4">
+        <a href="/" class="text-white hover:underline">← Volver al catálogo</a>
+        <h1 class="text-3xl font-black mt-3 mb-2">Cotizador Web</h1>
+        <p class="text-lg text-white/80 max-w-xl">Solicita una cotización personalizada para tu proyecto web.</p>
+      </div>
+    </header>
+    <main class="max-w-3xl mx-auto px-4 pb-20">
+      <CotizadorNuevo servicio={servicio} />
+    </main>
+    <footer class="text-center text-gray-500 py-10 mt-12 text-base">
+      <span class="font-semibold">© {new Date().getFullYear()} Catálogo de Servicios Web.</span> Todos los derechos reservados.
+    </footer>
+  </body>
+</html>

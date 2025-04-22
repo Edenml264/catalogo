@@ -30,12 +30,12 @@ export const services: Service[] = [
       "Optimización SEO básica",
       "Soporte y capacitación"
     ],
-    price: "Desde $350 USD",
+    price: "Desde $6,500 MXN",
     plans: [
       {
         name: "Básico",
         description: "Sitio institucional de hasta 5 páginas.",
-        price: "$350 USD",
+        price: "$6,500 MXN",
         features: [
           "Diseño personalizado",
           "SEO básico",
@@ -45,7 +45,7 @@ export const services: Service[] = [
       {
         name: "Pro",
         description: "Incluye tienda básica y blog.",
-        price: "$600 USD",
+        price: "$11,000 MXN",
         features: [
           "Todo lo del Básico",
           "Tienda WooCommerce",
@@ -55,7 +55,7 @@ export const services: Service[] = [
       {
         name: "Premium",
         description: "Hasta 15 páginas, optimización avanzada y soporte extendido.",
-        price: "$950 USD",
+        price: "$17,500 MXN",
         features: [
           "Todo lo del Pro",
           "Optimización SEO avanzada",
@@ -97,12 +97,12 @@ export const services: Service[] = [
       "Gestión de inventario",
       "Reportes de ventas"
     ],
-    price: "Desde $700 USD",
+    price: "Desde $13,000 MXN",
     plans: [
       {
         name: "Starter",
         description: "Tienda básica hasta 20 productos.",
-        price: "$700 USD",
+        price: "$13,000 MXN",
         features: [
           "Pasarelas de pago",
           "Gestión de productos",
@@ -112,7 +112,7 @@ export const services: Service[] = [
       {
         name: "Avanzada",
         description: "Incluye integraciones y reportes avanzados.",
-        price: "$1200 USD",
+        price: "$22,000 MXN",
         features: [
           "Todo lo de Starter",
           "Integración con envíos",
@@ -154,12 +154,12 @@ export const services: Service[] = [
       "Integración con formularios",
       "Optimización para móviles"
     ],
-    price: "$250 USD",
+    price: "$4,500 MXN",
     plans: [
       {
         name: "Landing única",
         description: "Página de aterrizaje personalizada.",
-        price: "$250 USD",
+        price: "$4,500 MXN",
         features: [
           "Diseño responsive",
           "Integración con formularios",
@@ -169,7 +169,7 @@ export const services: Service[] = [
       {
         name: "Landing + A/B Testing",
         description: "Incluye testeo de variantes y reportes.",
-        price: "$350 USD",
+        price: "$6,500 MXN",
         features: [
           "Todo lo anterior",
           "Implementación de pruebas A/B",
@@ -228,7 +228,6 @@ export const services: Service[] = [
       { question: "¿Puedo cancelar en cualquier momento?", answer: "Sí, sin penalización." }
     ]
   },
-// Fin del array de servicios
   {
     title: "Desarrollo a Medida",
     slug: "desarrollo-a-medida",
@@ -245,7 +244,7 @@ export const services: Service[] = [
       {
         name: "Desarrollo básico",
         description: "Funcionalidad personalizada simple (formularios, landings, etc.)",
-        price: "Desde $400 USD"
+        price: "Desde $7,000 MXN"
       },
       {
         name: "Desarrollo avanzado",
@@ -284,6 +283,29 @@ export const services: Service[] = [
       "Optimización de carga",
       "Mejores prácticas técnicas"
     ],
+    price: "Desde $5,500 MXN",
+    plans: [
+      {
+        name: "Básico",
+        description: "Optimización de velocidad y ajustes básicos.",
+        price: "$5,500 MXN",
+        features: [
+          "Optimización de velocidad",
+          "Ajustes SEO básicos",
+          "Informe de resultados"
+        ]
+      },
+      {
+        name: "Completo",
+        description: "Optimización completa con seguimiento.",
+        price: "$8,500 MXN",
+        features: [
+          "Optimización completa",
+          "Informe detallado",
+          "Seguimiento 1 mes"
+        ]
+      }
+    ],
     features: [
       { label: "Tipo de optimización", value: "SEO técnico, On-page, velocidad de carga" },
       { label: "Herramientas usadas", value: "Google PageSpeed, GTmetrix, SEMrush" },
@@ -313,6 +335,29 @@ export const services: Service[] = [
       "Recomendaciones personalizadas",
       "Acompañamiento estratégico"
     ],
+    price: "Desde $1,800 MXN",
+    plans: [
+      {
+        name: "Sesión única",
+        description: "Consultoría puntual para resolver dudas específicas.",
+        price: "$1,800 MXN",
+        features: [
+          "1 hora de consultoría",
+          "Recomendaciones personalizadas",
+          "Informe posterior"
+        ]
+      },
+      {
+        name: "Paquete mensual",
+        description: "Acompañamiento continuo para tu proyecto digital.",
+        price: "$5,000 MXN",
+        features: [
+          "4 sesiones",
+          "Seguimiento semanal",
+          "Soporte por WhatsApp"
+        ]
+      }
+    ],
     features: [
       { label: "Modalidad", value: "Online o presencial" },
       { label: "Duración", value: "Sesiones de 1h o paquetes mensuales" },
@@ -341,6 +386,29 @@ export const services: Service[] = [
       "Migración segura",
       "Recuperación de sitios hackeados",
       "Preservación de SEO"
+    ],
+    price: "Desde $3,500 MXN",
+    plans: [
+      {
+        name: "Básica",
+        description: "Migración de contenido y configuración básica.",
+        price: "$3,500 MXN",
+        features: [
+          "Migración de contenido",
+          "Preservación de SEO",
+          "Configuración básica"
+        ]
+      },
+      {
+        name: "Completa",
+        description: "Migración completa con optimización y soporte.",
+        price: "$7,500 MXN",
+        features: [
+          "Migración completa",
+          "Optimización",
+          "Soporte post-migración"
+        ]
+      }
     ],
     features: [
       { label: "Tipos de migración", value: "WordPress, WooCommerce, sitios estáticos" },

@@ -1,0 +1,440 @@
+---
+import { services } from '../data/services.ts';
+const { servicio } = Astro.props;
+let selectedService = servicio || '';
+
+// Encontrar el servicio preseleccionado (si existe)
+const selectedServiceData = services.find(s => s.title === selectedService);
+---
+<form id="cotizador-nuevo-form" class="bg-white rounded-2xl shadow-lg p-8 space-y-6 animate-fade-in mt-8 max-w-lg mx-auto">
+  <h3 class="text-xl font-bold text-blue-700 mb-2">Cotiza tu servicio web</h3>
+  
+  <!-- Mensaje de éxito/error -->
+  <div id="form-error" class="text-red-500 text-sm mb-2 hidden"></div>
+  <div id="form-success" class="text-green-600 font-semibold mb-2 hidden">¡Gracias! Te enviaremos tu cotización pronto.</div>
+  
+  <!-- Datos del cliente -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div>
+      <label for="nombreCliente" class="block mb-1 font-medium">Nombre completo</label>
+      <input type="text" id="nombreCliente" name="nombreCliente" placeholder="Nombre completo" required class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-cyan-200 outline-none" />
+    </div>
+    <div>
+      <label for="correoCliente" class="block mb-1 font-medium">Correo electrónico</label>
+      <input type="email" id="correoCliente" name="correoCliente" placeholder="ejemplo@correo.com" required class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-cyan-200 outline-none" />
+    </div>
+    <div>
+      <label for="telefonoCliente" class="block mb-1 font-medium">Teléfono</label>
+      <input type="tel" id="telefonoCliente" name="telefonoCliente" placeholder="(10 dígitos)" pattern="[0-9]{10}" required class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-cyan-200 outline-none" />
+    </div>
+    <div>
+      <label for="servicioSolicitado" class="block mb-1 font-medium">Servicio solicitado</label>
+      <select id="servicioSolicitado" name="servicioSolicitado" required class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-cyan-200 outline-none">
+        <option value="">Selecciona un servicio</option>
+        {Array.isArray(services) && services.map(s => (
+          <option value={s.title} selected={selectedService === s.title}>{s.title}</option>
+        ))}
+      </select>
+    </div>
+  </div>
+  
+  <!-- Plan seleccionado -->
+  <div id="planes-container" class="mt-4 mb-2 hidden">
+    <label for="planSeleccionado" class="block mb-1 font-medium">Plan o paquete</label>
+    <select id="planSeleccionado" name="planSeleccionado" class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-cyan-200 outline-none mb-2">
+      <option value="">Selecciona un plan</option>
+      <!-- Los planes se cargarán dinámicamente con JavaScript -->
+    </select>
+    
+    <!-- Características del plan -->
+    <div id="plan-features" class="bg-blue-50 p-4 rounded-lg mt-2 hidden">
+      <h4 class="font-medium text-blue-800 mb-2">Características incluidas:</h4>
+      <ul id="features-list" class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+        <!-- Las características se cargarán dinámicamente -->
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Opciones adicionales -->
+  <div class="border-t border-gray-200 pt-4 mt-4">
+    <h4 class="font-medium text-blue-800 mb-3">Opciones adicionales:</h4>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <label for="numPaginas" class="block mb-1 font-medium">Número de páginas</label>
+        <input type="number" id="numPaginas" value="5" min="1" class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-cyan-200 outline-none" />
+      </div>
+      <div>
+        <label for="diseno" class="block mb-1 font-medium">¿Diseño personalizado?</label>
+        <select id="diseno" class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-cyan-200 outline-none">
+          <option value="0">No</option>
+          <option value="3000">Sí (+$3,000 MXN)</option>
+        </select>
+      </div>
+      <div>
+        <label for="pagos" class="block mb-1 font-medium">¿Pagos en línea?</label>
+        <select id="pagos" class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-cyan-200 outline-none">
+          <option value="0">No</option>
+          <option value="5000">Sí (+$5,000 MXN)</option>
+        </select>
+      </div>
+      <div>
+        <label for="seo" class="block mb-1 font-medium">¿Optimización SEO?</label>
+        <select id="seo" class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-cyan-200 outline-none">
+          <option value="0">No</option>
+          <option value="2000">Sí (+$2,000 MXN)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Resumen y total -->
+  <div class="bg-gradient-to-r from-blue-50 to-cyan-50 p-4 rounded-lg mt-4">
+    <div class="flex justify-between items-center">
+      <span class="font-medium">Precio base:</span>
+      <span id="precio-base" class="font-medium">$0 MXN</span>
+    </div>
+    <div class="flex justify-between items-center mt-1">
+      <span class="font-medium">Adicionales:</span>
+      <span id="precio-adicionales" class="font-medium">$0 MXN</span>
+    </div>
+    <div class="flex justify-between items-center mt-3 text-lg font-bold text-blue-900 border-t border-blue-200 pt-2">
+      <span>Total Estimado:</span>
+      <span id="total">$0 MXN</span>
+    </div>
+  </div>
+  
+  <button id="enviarCotizacion" type="button" class="w-full bg-gradient-to-r from-blue-700 to-cyan-600 text-white font-bold py-3 rounded-full shadow hover:from-cyan-700 hover:to-blue-900 transition-all mt-4">Enviar cotización</button>
+</form>
+
+<!-- Datos de servicios incrustados para JavaScript -->
+<script is:inline define:vars={{ servicesData: JSON.stringify(services), selectedService }}>
+  // Definir los servicios como una variable global
+  window.serviciosCatalogo = JSON.parse(servicesData);
+  window.servicioPreseleccionado = selectedService;
+  console.log('Servicios cargados:', window.serviciosCatalogo);
+  console.log('Servicio preseleccionado:', window.servicioPreseleccionado);
+</script>
+
+<script type="module">
+  // Obtener datos de servicios directamente del servidor
+  const serviciosData = {};
+  // Cargar los servicios desde la variable global
+  const serviciosCatalogo = window.serviciosCatalogo;
+  
+  // Elementos del DOM
+  const servicioSelect = document.getElementById('servicioSolicitado');
+  const planesContainer = document.getElementById('planes-container');
+  const planSelect = document.getElementById('planSeleccionado');
+  const planFeatures = document.getElementById('plan-features');
+  const featuresList = document.getElementById('features-list');
+  const precioBase = document.getElementById('precio-base');
+  const precioAdicionales = document.getElementById('precio-adicionales');
+  const totalElement = document.getElementById('total');
+  const formError = document.getElementById('form-error');
+  const formSuccess = document.getElementById('form-success');
+  
+  // Inicializar datos de servicios
+  async function initServicios() {
+    try {
+      // Inicializar datos de servicios desde el catálogo
+      serviciosCatalogo.forEach(servicio => {
+        serviciosData[servicio.title] = {
+          nombre: servicio.title,
+          planes: servicio.plans || [],
+          precio: servicio.price || ''
+        };
+      });
+      
+      // Si hay un servicio preseleccionado, seleccionarlo en el dropdown
+      if (window.servicioPreseleccionado) {
+        const options = Array.from(servicioSelect.options);
+        const option = options.find(opt => opt.value === window.servicioPreseleccionado);
+        if (option) {
+          servicioSelect.value = window.servicioPreseleccionado;
+          await cargarPlanes(window.servicioPreseleccionado);
+        }
+      }
+    } catch (error) {
+      console.error('Error al inicializar servicios:', error);
+    }
+  }
+  
+  // Cargar planes basados en el servicio seleccionado
+  async function cargarPlanes(servicioNombre) {
+    try {
+      console.log('Cargando planes para:', servicioNombre);
+      console.log('Servicios disponibles:', serviciosCatalogo);
+      
+      // Limpiar opciones actuales
+      planSelect.innerHTML = '<option value="">Selecciona un plan</option>';
+      featuresList.innerHTML = '';
+      planFeatures.classList.add('hidden');
+      
+      // Obtener el servicio del catálogo
+      const servicio = serviciosCatalogo.find(s => s.title === servicioNombre);
+      console.log('Servicio encontrado:', servicio);
+      
+      if (!servicio) {
+        throw new Error('Servicio no encontrado');
+      }
+      
+      // Verificar si el servicio tiene planes
+      if (servicio.plans && servicio.plans.length > 0) {
+        // Guardar planes en el objeto de servicios
+        serviciosData[servicioNombre].planes = servicio.plans;
+        
+        // Agregar opciones al select
+        servicio.plans.forEach(plan => {
+          const option = document.createElement('option');
+          option.value = plan.name;
+          option.textContent = `${plan.name} - ${plan.price}`;
+          option.dataset.price = plan.price;
+          // Guardar el valor numérico del precio para cálculos
+          const precioNumerico = parseInt(plan.price.replace(/[^0-9]/g, '')) || 0;
+          option.dataset.priceValue = precioNumerico;
+          option.dataset.features = JSON.stringify(plan.features || []);
+          planSelect.appendChild(option);
+        });
+        
+        // Mostrar el contenedor de planes
+        planesContainer.classList.remove('hidden');
+      } else {
+        // Si no hay planes, mostrar mensaje
+        formError.textContent = 'Este servicio no tiene planes disponibles.';
+        formError.classList.remove('hidden');
+      }
+    } catch (error) {
+      console.error('Error al cargar planes:', error);
+      formError.textContent = 'Error al cargar los planes. Por favor, intenta de nuevo.';
+      formError.classList.remove('hidden');
+    }
+  }
+  
+  // Mostrar características del plan seleccionado
+  function mostrarCaracteristicas() {
+    // Limpiar lista actual
+    featuresList.innerHTML = '';
+    
+    const selectedOption = planSelect.options[planSelect.selectedIndex];
+    if (!selectedOption || !selectedOption.dataset.features) {
+      planFeatures.classList.add('hidden');
+      return;
+    }
+    
+    try {
+      const features = JSON.parse(selectedOption.dataset.features);
+      
+      // Crear elementos de lista para cada característica
+      features.forEach(feature => {
+        const li = document.createElement('li');
+        li.textContent = feature;
+        featuresList.appendChild(li);
+      });
+      
+      // Mostrar el contenedor de características
+      planFeatures.classList.remove('hidden');
+      
+      // Actualizar precio base
+      precioBase.textContent = selectedOption.dataset.price || '$0 MXN';
+      // Guardar el valor numérico del precio en un atributo data para fácil acceso
+      precioBase.dataset.value = selectedOption.dataset.priceValue || '0';
+      calcularTotal();
+    } catch (error) {
+      console.error('Error al mostrar características:', error);
+      planFeatures.classList.add('hidden');
+    }
+  }
+  
+  // Calcular el total de la cotización
+  function calcularTotal() {
+    // Obtener precio base directamente del dataset donde lo almacenamos
+    const precioBaseValor = parseInt(precioBase.dataset.value || '0');
+    console.log('Precio base procesado:', precioBaseValor);
+    
+    // Calcular adicionales
+    const numPaginas = parseInt(document.getElementById('numPaginas').value);
+    const diseno = parseInt(document.getElementById('diseno').value);
+    const pagos = parseInt(document.getElementById('pagos').value);
+    const seo = parseInt(document.getElementById('seo').value);
+    
+    // Costo adicional por páginas extra (más de 5)
+    const costoPaginas = numPaginas > 5 ? (numPaginas - 5) * 800 : 0; // Ajustado a MXN
+    
+    // Sumar todos los adicionales
+    const adicionales = diseno + pagos + seo + costoPaginas;
+    
+    // Actualizar precio adicionales
+    precioAdicionales.textContent = `$${adicionales.toLocaleString()} MXN`;
+    
+    // Calcular y mostrar total (ahora todo está en MXN)
+    const total = precioBaseValor + adicionales;
+    totalElement.textContent = `$${total.toLocaleString()} MXN`;
+  }
+  
+  // Event Listeners
+  servicioSelect.addEventListener('change', async () => {
+    const servicioSeleccionado = servicioSelect.value;
+    if (servicioSeleccionado) {
+      await cargarPlanes(servicioSeleccionado);
+    } else {
+      planesContainer.classList.add('hidden');
+      precioBase.textContent = '$0';
+      calcularTotal();
+    }
+  });
+  
+  planSelect.addEventListener('change', mostrarCaracteristicas);
+  
+  // Actualizar total cuando cambian las opciones adicionales
+  document.querySelectorAll('#numPaginas, #diseno, #pagos, #seo').forEach(elemento => {
+    elemento.addEventListener('change', calcularTotal);
+  });
+  
+  // Manejar envío de cotización
+  document.getElementById('enviarCotizacion').addEventListener('click', () => {
+    // Validar campos requeridos
+    const nombre = document.getElementById('nombreCliente').value.trim();
+    const correo = document.getElementById('correoCliente').value.trim();
+    const telefono = document.getElementById('telefonoCliente').value.trim();
+    const servicio = servicioSelect.value;
+    const plan = planSelect.value;
+    
+    if (!nombre || !correo || !telefono || !servicio || !plan) {
+      formError.textContent = 'Por favor, completa todos los campos requeridos.';
+      formError.classList.remove('hidden');
+      return;
+    }
+    
+    // Recopilar todos los datos de la cotización
+    const numPaginas = document.getElementById('numPaginas').value;
+    const diseno = document.getElementById('diseno').options[document.getElementById('diseno').selectedIndex].text;
+    const pagos = document.getElementById('pagos').options[document.getElementById('pagos').selectedIndex].text;
+    const seo = document.getElementById('seo').options[document.getElementById('seo').selectedIndex].text;
+    
+    // Obtener precios
+    const precioBaseText = precioBase.textContent;
+    const precioPaginasValue = parseInt(numPaginas) > 5 ? (parseInt(numPaginas) - 5) * 800 : 0;
+    const precioPaginas = precioPaginasValue > 0 ? `$${precioPaginasValue.toLocaleString()} MXN` : '$0 MXN';
+    const precioDiseno = diseno.includes('Sí') ? '$3,000 MXN' : '$0 MXN';
+    const precioPagos = pagos.includes('Sí') ? '$5,000 MXN' : '$0 MXN';
+    const precioSeo = seo.includes('Sí') ? '$2,000 MXN' : '$0 MXN';
+    const total = totalElement.textContent;
+    
+    // Crear objeto con todos los datos
+    const datosCotizacion = {
+      nombre,
+      correo,
+      telefono,
+      servicio,
+      plan,
+      numPaginas,
+      diseno,
+      pagos,
+      seo,
+      precioBase: precioBaseText,
+      precioPaginas,
+      precioDiseno,
+      precioPagos,
+      precioSeo,
+      total,
+      fecha: new Date().toLocaleDateString('es-MX')
+    };
+    
+    // Guardar datos en sessionStorage para la página de cotización
+    sessionStorage.setItem('datosCotizacion', JSON.stringify(datosCotizacion));
+    
+    // 1. Abrir la página de cotización en una nueva pestaña para el cliente
+    window.open('/cotizacion', '_blank');
+    
+    // 2. Enviar correo electrónico al administrador
+    enviarCorreoAdministrador(datosCotizacion);
+    
+    // Mostrar mensaje de éxito
+    formSuccess.classList.remove('hidden');
+    formError.classList.add('hidden');
+    
+    // Resetear el formulario después de un tiempo
+    resetearFormulario();
+  });
+  
+  // Función para enviar correo al administrador
+  async function enviarCorreoAdministrador(datos) {
+    try {
+      // Crear el cuerpo del correo con formato HTML
+      const cuerpoCorreo = `
+        <h2>Nueva Cotización Web</h2>
+        <p><strong>Fecha:</strong> ${datos.fecha}</p>
+        <h3>Datos del Cliente:</h3>
+        <p><strong>Nombre:</strong> ${datos.nombre}</p>
+        <p><strong>Correo:</strong> ${datos.correo}</p>
+        <p><strong>Teléfono:</strong> ${datos.telefono}</p>
+        
+        <h3>Detalles de la Cotización:</h3>
+        <p><strong>Servicio:</strong> ${datos.servicio}</p>
+        <p><strong>Plan:</strong> ${datos.plan}</p>
+        <p><strong>Precio Base:</strong> ${datos.precioBase}</p>
+        
+        <h3>Opciones Adicionales:</h3>
+        <p><strong>Número de Páginas:</strong> ${datos.numPaginas} (${datos.precioPaginas})</p>
+        <p><strong>Diseño Personalizado:</strong> ${datos.diseno} (${datos.precioDiseno})</p>
+        <p><strong>Integración de Pagos:</strong> ${datos.pagos} (${datos.precioPagos})</p>
+        <p><strong>Optimización SEO:</strong> ${datos.seo} (${datos.precioSeo})</p>
+        
+        <h3>Total Estimado: ${datos.total}</h3>
+      `;
+      
+      // Configuración para el servicio de correo (usando un endpoint serverless)
+      const emailData = {
+        to: 'info@edenmendez.com',
+        subject: `Nueva Cotización Web de ${datos.nombre}`,
+        html: cuerpoCorreo,
+        replyTo: datos.correo
+      };
+      
+      // Aquí se haría la llamada al endpoint de correo
+      // Por ahora, solo simulamos el envío con un console.log
+      console.log('Enviando correo al administrador:', emailData);
+      
+      // En una implementación real, aquí iría el código para enviar el correo
+      // Por ejemplo, usando fetch para llamar a un endpoint serverless:
+      /*
+      const response = await fetch('/api/enviar-correo', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(emailData),
+      });
+      
+      if (!response.ok) {
+        throw new Error('Error al enviar el correo');
+      }
+      */
+      
+      return true;
+    } catch (error) {
+      console.error('Error al enviar correo:', error);
+      return false;
+    }
+  }
+  
+  // Resetear formulario después de 3 segundos
+  function resetearFormulario() {
+    setTimeout(() => {
+      document.getElementById('cotizador-nuevo-form').reset();
+      formSuccess.classList.add('hidden');
+      planesContainer.classList.add('hidden');
+      planFeatures.classList.add('hidden');
+      precioBase.textContent = '$0 MXN';
+      precioAdicionales.textContent = '$0 MXN';
+      totalElement.textContent = '$0 MXN';
+    }, 3000);
+  }
+  
+  // Inicializar al cargar la página
+  initServicios();
+</script>
+<style>
+  @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+  .animate-fade-in { animation: fade-in 1.2s ease; }
+</style>
