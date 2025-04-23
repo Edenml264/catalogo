@@ -138,7 +138,7 @@ if (!service) {
 
       <!-- Llamada a la acción final -->
       <section class="text-center mt-10 mb-4">
-        <a href="mailto:contacto@tucorreo.com?subject=Interés en {service.title}" class="inline-block bg-gradient-to-r from-blue-700 to-cyan-600 text-white px-8 py-4 rounded-full shadow-lg hover:from-cyan-700 hover:to-blue-900 transition-all font-bold text-lg">Solicitar cotización personalizada</a>
+        <a href={`/cotizador?servicio=${encodeURIComponent(service.title)}`} class="inline-block bg-gradient-to-r from-blue-700 to-cyan-600 text-white px-8 py-4 rounded-full shadow-lg hover:from-cyan-700 hover:to-blue-900 transition-all font-bold text-lg">Solicitar cotización personalizada</a>
       </section>
     </main>
     <footer class="text-center text-gray-500 py-10 mt-12 text-base animate-fade-in">
