@@ -55,7 +55,7 @@ Este proyecto es un catálogo digital de servicios web pensado para apoyar a ven
 6. ✅ Deploy a Netlify
 
 ## Próximos pasos
-1. **Crear endpoint para envío de correo**: Implementar un endpoint (API serverless o backend) para enviar la información de la cotización al correo del administrador: ventas@edenmendez.com
+1. **Crear endpoint para envío de correo**: Implementar un endpoint (API serverless o backend) para enviar la información de la cotización al correo del administrador: ventas@sionline.com.mx
 2. Añadir más servicios y planes
 3. Mejorar validaciones de formulario
 4. Implementar seguimiento y analytics
@@ -65,7 +65,7 @@ Este proyecto es un catálogo digital de servicios web pensado para apoyar a ven
 
 ### Pendiente inmediato
 > **Crear un endpoint para el envío de correo con la información de la cotización al administrador**
-> - Correo destino: ventas@edenmendez.com
+> - Correo destino: ventas@sionline.com.mx
 > - El endpoint debe recibir todos los datos de la cotización generada y enviarlos de forma estructurada.
 > - Opcional: enviar copia al cliente si se desea.
 
@@ -82,7 +82,7 @@ npm run build
 ```
 
 ## Contacto y soporte
-- **Correo**: info@edenmendez.com
+- **Correo**: info@sionline.com.mx
 - **Teléfono**: 624-166-5588
 - **Ubicación**: Country del Mar, San Jose del Cabo, BCS, México
 
