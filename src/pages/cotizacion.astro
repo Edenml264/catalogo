@@ -103,63 +103,34 @@
                     <th>Precio</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>Servicio</td>
-                    <td id="servicio"></td>
-                    <td id="precioBase"></td>
-                </tr>
-                <tr>
-                    <td>Plan</td>
-                    <td id="plan"></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Número de páginas</td>
-                    <td id="numPaginas"></td>
-                    <td id="precioPaginas"></td>
-                </tr>
-                <tr>
-                    <td>Diseño personalizado</td>
-                    <td id="diseno"></td>
-                    <td id="precioDiseno"></td>
-                </tr>
-                <tr>
-                    <td>Integración con pagos en línea</td>
-                    <td id="pagos"></td>
-                    <td id="precioPagos"></td>
-                </tr>
-                <tr>
-                    <td>Optimización SEO</td>
-                    <td id="seo"></td>
-                    <td id="precioSeo"></td>
-                </tr>
+            <tbody id="tabla-cotizacion-body">
+                <!-- Las filas se llenarán dinámicamente con JS -->
             </tbody>
         </table>
         <div class="total">
-            Total: <span id="totalCotizacion"></span>
+            Total estimado: <span id="totalCotizacion"></span>
         </div>
         <div style="text-align:right; margin-top:20px; margin-bottom:20px;">
             <button onclick="window.print()" class="btn-imprimir">Imprimir Cotización</button>
         </div>
         <div class="footer">
-            <p>Gracias por confiar en nuestros servicios. La cotización es válida por 15 días.<br>Términos y Condiciones: <br> 
+            <p>Gracias por confiar en nuestros servicios. La cotización es válida por 15 días y no incluye impuestos.<br>Términos y Condiciones: <br> 
                 El proyecto comienza con un anticipo del 70% y el saldo se paga antes de la entrega final. Los tiempos de entrega dependen de la entrega puntual de materiales por parte del cliente. Se incluyen dos rondas de revisiones; adicionales se facturarán por separado. El cliente es responsable de cubrir los costos de licencias de terceros. 
                 Toda la información proporcionada será tratada de manera confidencial. 
                 El soporte y mantenimiento no están incluidos, pero pueden contratarse por separado. 
                 Las cancelaciones a mitad del proyecto retendrán el anticipo como compensación.</p>
         </div>
     </div>
-    <script>
-    // Obtener datos de sessionStorage
+    <script type="module">
+    // Obtener datos de localStorage
     document.addEventListener('DOMContentLoaded', function() {
-        const datosCotizacionStr = sessionStorage.getItem('datosCotizacion');
+        const datosCotizacionStr = localStorage.getItem('datosCotizacion');
         if (datosCotizacionStr) {
             try {
                 const datos = JSON.parse(datosCotizacionStr);
                 
                 // Función auxiliar para actualizar elementos del DOM de forma segura
-                function actualizarElemento(id: string, valor: string | number | null | undefined) {
+                function actualizarElemento(id, valor) {
                     const elemento = document.getElementById(id);
                     if (elemento) {
                         elemento.textContent = valor !== null && valor !== undefined ? String(valor) : '';
@@ -175,10 +146,30 @@
                 const fecha = new Date();
                 actualizarElemento('fechaCotizacion', fecha.toLocaleDateString('es-MX'));
                 
-                // Llenar detalles del servicio
-                actualizarElemento('servicio', datos.servicio);
-                actualizarElemento('plan', datos.plan);
-                actualizarElemento('precioBase', datos.precioBase);
+                // Llenar tabla de cotización de forma dinámica y estilizada
+                const camposTabla = [
+                    { label: 'Servicio', detalle: datos.servicio, precio: datos.precioBase },
+                    { label: 'Plan', detalle: datos.plan },
+                    { label: 'Número de páginas', detalle: datos.numPaginas ? datos.numPaginas + ' páginas' : '', precio: datos.precioPaginas },
+                    { label: 'Diseño personalizado', detalle: datos.diseno, precio: datos.precioDiseno },
+                    { label: 'Integración con pagos en línea', detalle: datos.pagos, precio: datos.precioPagos },
+                    { label: 'Optimización SEO', detalle: datos.seo, precio: datos.precioSeo },
+                    // Campos extra para Renta de equipo de cómputo
+                    { label: 'Días de renta', detalle: datos.diasRenta },
+                    { label: 'Cantidad de equipos', detalle: datos.cantidadEquipos }
+                ];
+                const tablaBody = document.getElementById('tabla-cotizacion-body');
+                if (tablaBody) {
+                    tablaBody.innerHTML = '';
+                    camposTabla.forEach(campo => {
+                        // Solo mostrar filas con algún valor relevante
+                        if ((campo.detalle !== undefined && campo.detalle !== '' && campo.detalle !== null && campo.detalle !== 'No') || (campo.precio !== undefined && campo.precio !== '' && campo.precio !== null && campo.precio !== '$0 MXN')) {
+                            const fila = document.createElement('tr');
+                            fila.innerHTML = `<td>${campo.label}</td><td>${campo.detalle !== undefined ? campo.detalle : ''}</td><td>${campo.precio !== undefined ? campo.precio : ''}</td>`;
+                            tablaBody.appendChild(fila);
+                        }
+                    });
+                }
                 
                 // Llenar opciones adicionales
                 actualizarElemento('numPaginas', datos.numPaginas ? datos.numPaginas + ' páginas' : '');
@@ -195,6 +186,43 @@
                 
                 // Total
                 actualizarElemento('totalCotizacion', datos.total);
+
+                // Mostrar detalles dinámicos del servicio y plan
+                const servicios = typeof servicesData === 'object' ? servicesData : window.serviciosCatalogo;
+                const servicioSeleccionado = datos.servicio;
+                const planSeleccionado = datos.plan;
+                let servicioObj = null;
+                let planObj = null;
+                if (servicios && Array.isArray(servicios)) {
+                    servicioObj = servicios.find(s => s.title === servicioSeleccionado);
+                    if (servicioObj && servicioObj.plans && Array.isArray(servicioObj.plans)) {
+                        planObj = servicioObj.plans.find(p => p.name === planSeleccionado);
+                    }
+                }
+                // Mostrar descripción del servicio
+                if (servicioObj) {
+                    const descDiv = document.createElement('div');
+                    descDiv.className = 'servicio-descripcion';
+                    descDiv.innerHTML = `<h3 style="color:#2563eb;margin-top:30px;">Descripción del servicio</h3><p>${servicioObj.description || ''}</p>`;
+                    document.querySelector('.cotizacion-container').appendChild(descDiv);
+                    // Mostrar plan (si existe)
+                    if (planObj) {
+                        const planDiv = document.createElement('div');
+                        planDiv.className = 'plan-descripcion';
+                        planDiv.innerHTML = `<h3 style="color:#2563eb;margin-top:20px;">Plan seleccionado: ${planObj.name}</h3>` +
+                            (planObj.description ? `<p>${planObj.description}</p>` : '') +
+                            (planObj.features && planObj.features.length ? `<ul style="margin-left:20px;">${planObj.features.map(f => `<li>${f}</li>`).join('')}</ul>` : '');
+                        document.querySelector('.cotizacion-container').appendChild(planDiv);
+                    }
+                    // Mostrar FAQs
+                    if (servicioObj.faq && servicioObj.faq.length) {
+                        const faqDiv = document.createElement('div');
+                        faqDiv.className = 'faq-cotizacion';
+                        faqDiv.innerHTML = `<h3 style="color:#2563eb;margin-top:20px;">Preguntas frecuentes</h3>` +
+                            servicioObj.faq.map(faq => `<details style="margin-bottom:8px;"><summary style="font-weight:bold;cursor:pointer;">${faq.question}</summary><p style="margin:8px 0 0 0;">${faq.answer}</p></details>`).join('');
+                        document.querySelector('.cotizacion-container').appendChild(faqDiv);
+                    }
+                }
             } catch (error) {
                 console.error('Error al procesar los datos de la cotización:', error);
                 // Mostrar mensaje de error

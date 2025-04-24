@@ -378,7 +378,7 @@ const selectedServiceData = services.find(s => s.title === selectedService);
     }
 
     // Guardar datos en sessionStorage para la página de cotización
-    sessionStorage.setItem('datosCotizacion', JSON.stringify(datosCotizacion));
+    localStorage.setItem('datosCotizacion', JSON.stringify(datosCotizacion));
 
     // 1. Abrir la página de cotización en una nueva pestaña para el cliente
     window.open('/cotizacion', '_blank');
