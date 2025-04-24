@@ -80,10 +80,10 @@ npm run build
 
 ## Estado del proyecto
 - El catálogo está completamente funcional y desplegado en producción.
-- URL de producción: https://poetic-conkies-668790.netlify.app/
+- URL de producción: https://sionline-catalogo-eml.netlify.app/
 
 Puedes acceder al catálogo en línea desde el siguiente enlace:
-👉 [Catálogo de Servicios Web en producción](https://poetic-conkies-668790.netlify.app/)
+👉 [Catálogo de Servicios Web en producción](https://sionline-catalogo-eml.netlify.app/)
 
 ---
 
@@ -109,7 +109,7 @@ Facilitar a los vendedores una herramienta visual y práctica para explicar y co
 
 ## Deploy
 Este proyecto está actualmente desplegado en Netlify:
-- URL: https://poetic-conkies-668790.netlify.app/
+- URL: https://sionline-catalogo-eml.netlify.app/
 
 Cualquier cambio en la rama principal puede ser reflejado en producción manualmente desde el panel de Netlify.
 

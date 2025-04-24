@@ -85,7 +85,14 @@ export const services: Service[] = [
     faq: [
       { question: "¿Puedo autoadministrar mi sitio?", answer: "Sí, te capacitamos para que puedas hacer cambios fácilmente." },
       { question: "¿Incluye dominio y hosting?", answer: "Podemos asesorarte en la contratación, pero no están incluidos por defecto." },
-      { question: "¿El sitio es seguro?", answer: "Sí, aplicamos buenas prácticas de seguridad y actualizaciones." }
+      { question: "¿El sitio es seguro?", answer: "Sí, aplicamos buenas prácticas de seguridad y actualizaciones." },
+      { question: "¿Cuáles son las formas de pago disponibles?", answer: "Aceptamos transferencia bancaria, tarjetas de crédito/débito y pagos en efectivo en Los Cabos." },
+      { question: "¿Puedo solicitar factura?", answer: "Sí, emitimos factura electrónica (CFDI) para todos nuestros servicios. Solicítala al momento de tu pago." },
+      { question: "¿Cuánto tarda el proceso desde la contratación hasta la entrega?", answer: "El tiempo depende del servicio y la carga de trabajo, pero te damos una estimación clara antes de iniciar y mantenemos comunicación constante." },
+      { question: "¿Puedo solicitar cambios una vez iniciado el proyecto?", answer: "Sí, puedes solicitar ajustes. Dependiendo del alcance, pueden generar costos adicionales, pero siempre te avisaremos antes." },
+      { question: "¿Ofrecen soporte después de la entrega?", answer: "Sí, todos nuestros servicios incluyen un periodo de soporte. También ofrecemos paquetes de soporte extendido." },
+      { question: "¿Qué pasa si no estoy satisfecho con el resultado?", answer: "Trabajamos contigo hasta que estés conforme. Nuestro proceso incluye revisiones y ajustes según tus comentarios." },
+      { question: "¿El servicio incluye capacitación para usar mi sitio?", answer: "Sí, incluimos capacitación básica para que puedas administrar tu sitio con facilidad." }
     ]
   },
   {
@@ -142,7 +149,14 @@ export const services: Service[] = [
     faq: [
       { question: "¿Puedo gestionar mis productos fácilmente?", answer: "Sí, el panel es intuitivo y te capacitamos en su uso." },
       { question: "¿Incluye integración con envíos?", answer: "Sí, puedes configurar proveedores de envío nacionales e internacionales." },
-      { question: "¿Puedo vender productos digitales?", answer: "Sí, WooCommerce soporta productos físicos y digitales." }
+      { question: "¿Puedo vender productos digitales?", answer: "Sí, WooCommerce soporta productos físicos y digitales." },
+      { question: "¿Cuáles son las formas de pago disponibles?", answer: "Aceptamos transferencia bancaria, tarjetas de crédito/débito y pagos en efectivo en Los Cabos." },
+      { question: "¿Puedo solicitar factura?", answer: "Sí, emitimos factura electrónica (CFDI) para todos nuestros servicios. Solicítala al momento de tu pago." },
+      { question: "¿Cuánto tarda el proceso desde la contratación hasta la entrega?", answer: "El tiempo depende del servicio y la carga de trabajo, pero te damos una estimación clara antes de iniciar y mantenemos comunicación constante." },
+      { question: "¿Puedo solicitar cambios una vez iniciado el proyecto?", answer: "Sí, puedes solicitar ajustes. Dependiendo del alcance, pueden generar costos adicionales, pero siempre te avisaremos antes." },
+      { question: "¿Ofrecen soporte después de la entrega?", answer: "Sí, todos nuestros servicios incluyen un periodo de soporte. También ofrecemos paquetes de soporte extendido." },
+      { question: "¿Qué pasa si no estoy satisfecho con el resultado?", answer: "Trabajamos contigo hasta que estés conforme. Nuestro proceso incluye revisiones y ajustes según tus comentarios." },
+      { question: "¿El servicio incluye capacitación para usar mi tienda?", answer: "Sí, incluimos capacitación básica para que puedas administrar tu tienda con facilidad." }
     ]
   },
   {
@@ -496,7 +510,13 @@ export const services: Service[] = [
     faq: [
       { question: "¿Incluye software?", answer: "Incluye software básico (Office, navegador, antivirus)." },
       { question: "¿Se requiere depósito?", answer: "Sí, se solicita un depósito reembolsable según el equipo." },
-      { question: "¿Puedo rentar por más de un día?", answer: "Sí, tenemos tarifas preferenciales por semana o mes." }
+      { question: "¿Puedo rentar por más de un día?", answer: "Sí, tenemos tarifas preferenciales por semana o mes." },
+      { question: "¿Cuáles son las formas de pago disponibles?", answer: "Aceptamos transferencia bancaria, tarjetas de crédito/débito y pagos en efectivo en Los Cabos." },
+      { question: "¿Puedo solicitar factura?", answer: "Sí, emitimos factura electrónica (CFDI) para todos nuestros servicios. Solicítala al momento de tu pago." },
+      { question: "¿Qué pasa si el equipo presenta fallas?", answer: "Reemplazamos el equipo sin costo extra durante el periodo de renta." },
+      { question: "¿Ofrecen entrega y recolección a domicilio?", answer: "Sí, el servicio incluye entrega y recolección en Los Cabos sin costo adicional." },
+      { question: "¿El equipo viene listo para usar?", answer: "Sí, entregamos los equipos configurados y con software básico listo para trabajar." },
+      { question: "¿Puedo rentar varios equipos a la vez?", answer: "Sí, puedes solicitar la cantidad que necesites, sujeto a disponibilidad." }
     ]
   }
 ];
