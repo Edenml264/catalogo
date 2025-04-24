@@ -24,7 +24,7 @@ export const services: Service[] = [
     slug: "wordpress-profesional",
     description: "Desarrollo de sitios web modernos, seguros y autoadministrables.",
     icon: "🌐",
-    image: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b43?auto=format&fit=crop&w=600&q=80",
+    image: "/services/wordpress-min.jpg",
     bullets: [
       "Diseño personalizado",
       "Optimización SEO básica",
@@ -91,7 +91,7 @@ export const services: Service[] = [
     slug: "tienda-online-woocommerce",
     description: "Vende productos o servicios con una tienda online robusta y fácil de gestionar.",
     icon: "🛒",
-    image: "https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=600&q=80",
+    image: "/services/tiendaonline-min.jpg",
     bullets: [
       "Integración de pagos",
       "Gestión de inventario",
@@ -148,7 +148,7 @@ export const services: Service[] = [
     slug: "landing-page-impacto",
     description: "Páginas diseñadas para captar leads y aumentar conversiones.",
     icon: "🚀",
-    image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+    image: "/services/landingpage-min.jpg",
     bullets: [
       "Diseño enfocado en conversiones",
       "Integración con formularios",
@@ -201,7 +201,7 @@ export const services: Service[] = [
     slug: "mantenimiento-soporte-web",
     description: "Mantén tu web segura, actualizada y libre de problemas.",
     icon: "🛠️",
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80",
+    image: "/services/maintenance-support-min.jpg",
     bullets: [
       "Actualizaciones periódicas",
       "Backups automáticos",
@@ -233,7 +233,7 @@ export const services: Service[] = [
     slug: "desarrollo-a-medida",
     description: "Soluciones personalizadas en WordPress, Astro, Svelte, Vue, Laravel y más.",
     icon: "💡",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80",
+    image: "public/services/customdevelopment-min.jpg",
     bullets: [
       "Funcionalidad a la medida",
       "Integraciones avanzadas",
@@ -277,7 +277,7 @@ export const services: Service[] = [
     slug: "optimizacion-seo-velocidad",
     description: "Mejora el posicionamiento y la rapidez de tu web para atraer más clientes.",
     icon: "⚡",
-    image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+    image: "/services/seo-min.jpg",
     bullets: [
       "Auditoría SEO completa",
       "Optimización de carga",
@@ -329,7 +329,7 @@ export const services: Service[] = [
     slug: "consultoria-asesoria-web",
     description: "Resuelve dudas y mejora tu estrategia digital con expertos.",
     icon: "🎯",
-    image: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b43?auto=format&fit=crop&w=600&q=80",
+    image: "/services/consultingservices-min.jpg",
     bullets: [
       "Diagnóstico profesional",
       "Recomendaciones personalizadas",
@@ -381,7 +381,7 @@ export const services: Service[] = [
     slug: "migraciones-rescate-web",
     description: "Recupera o migra tu sitio sin perder información ni posicionamiento.",
     icon: "🔄",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80",
+    image: "/services/webbackup-min.jpg",
     bullets: [
       "Migración segura",
       "Recuperación de sitios hackeados",
@@ -426,6 +426,79 @@ export const services: Service[] = [
     faq: [
       { question: "¿Puedo migrar mi sitio yo mismo?", answer: "Sí, pero recomendamos nuestro servicio para evitar pérdidas de datos o SEO." },
       { question: "¿Incluye soporte técnico?", answer: "Sí, te ayudamos en cualquier problema técnico post-migración." }
+    ]
+  },
+  {
+    title: "Renta de equipo de cómputo",
+    slug: "renta-equipo-computo",
+    description: "Renta de laptops para eventos, oficinas temporales o necesidades puntuales. Equipos confiables y listos para usar.",
+    icon: "💻",
+    image: "/services/renta-laptops-min.jpg",
+    bullets: [
+      "Laptops listas para usar",
+      "Precios por día",
+      "Opciones para diferentes necesidades"
+    ],
+    price: "Desde $900 MXN por día",
+    plans: [
+      {
+        name: "Laptop dual core AMD",
+        description: "Equipo básico para tareas de oficina y navegación.",
+        price: "$900 MXN por día",
+        features: [
+          "Procesador dual core AMD",
+          "4GB RAM / 128GB SSD",
+          "Windows 10 o superior"
+        ]
+      },
+      {
+        name: "Laptop I5/R5",
+        description: "Equipo intermedio para productividad y multitarea.",
+        price: "$1,300 MXN por día",
+        features: [
+          "Intel Core i5 o Ryzen 5",
+          "8GB RAM / 256GB SSD",
+          "Windows 10/11"
+        ]
+      },
+      {
+        name: "Laptop de alto rendimiento i7+",
+        description: "Ideal para tareas exigentes, edición o desarrollo.",
+        price: "$2,000 MXN por día",
+        features: [
+          "Intel Core i7 o superior",
+          "16GB RAM / 512GB SSD",
+          "Gráficos dedicados (según modelo)"
+        ]
+      },
+      {
+        name: "Laptop Apple Macbook Pro i7",
+        description: "Potencia y diseño para usuarios Apple.",
+        price: "$2,500 MXN por día",
+        features: [
+          "Apple Macbook Pro i7",
+          "16GB RAM / 512GB SSD",
+          "macOS"
+        ]
+      }
+    ],
+    features: [
+      { label: "Entrega y recolección", value: "Incluidas en Los Cabos" },
+      { label: "Soporte técnico", value: "Durante el periodo de renta" },
+      { label: "Accesorios", value: "Cargador y funda incluidos" }
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80",
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80"
+    ],
+    testimonials: [
+      { quote: "La laptop funcionó perfecto para nuestro evento.", author: "Organizador de evento" },
+      { quote: "Excelente servicio y equipos en buen estado.", author: "Cliente frecuente" }
+    ],
+    faq: [
+      { question: "¿Incluye software?", answer: "Incluye software básico (Office, navegador, antivirus)." },
+      { question: "¿Se requiere depósito?", answer: "Sí, se solicita un depósito reembolsable según el equipo." },
+      { question: "¿Puedo rentar por más de un día?", answer: "Sí, tenemos tarifas preferenciales por semana o mes." }
     ]
   }
 ];
