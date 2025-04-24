@@ -30,19 +30,21 @@ Este proyecto es un catálogo digital de servicios web pensado para apoyar a ven
 ## Características implementadas
 
 ### Catálogo de servicios
-- Estructura de datos centralizada en `services.ts`
-- Páginas dinámicas generadas a partir de los datos del catálogo
-- Diseño responsivo adaptado a todos los dispositivos
-- Navegación intuitiva entre servicios
+- Estructura de datos centralizada en `services.ts`. Todos los servicios, subservicios y planes se gestionan desde un solo archivo para máxima consistencia.
+- Precios y lógica adaptados al mercado local de Los Cabos, BCS, México (MXN, sin conversión a dólares).
+- Páginas dinámicas generadas a partir de los datos del catálogo.
+- Diseño responsivo adaptado a todos los dispositivos.
+- Navegación intuitiva entre servicios.
 
 ### Cotizador Web
-- **Interfaz dinámica**: Formulario interactivo para cotización de servicios
-- **Integración con catálogo**: Carga dinámica de servicios y planes desde `services.ts`
-- **Cálculo en tiempo real**: Actualización instantánea de precios según opciones seleccionadas
-- **Generación de cotización**: Vista detallada para el cliente en nueva pestaña
-- **Envío de datos**: Preparación para notificación por correo al administrador
-- **Soporte UTF-8**: Correcta visualización de caracteres especiales y acentos en español
-- **Precios localizados**: Todos los precios en pesos mexicanos (MXN)
+- **Interfaz dinámica**: Formulario interactivo para cotización de servicios.
+- **Integración con catálogo**: Carga dinámica de servicios y planes desde `services.ts` (sin duplicidad de datos).
+- **Cálculo en tiempo real**: Actualización instantánea de precios según opciones seleccionadas.
+- **Generación de cotización**: Vista detallada para el cliente en nueva pestaña.
+- **Visualización dinámica**: Todos los campos relevantes (incluyendo "Renta de equipo de cómputo") se muestran automáticamente y solo si tienen valor.
+- **Soporte UTF-8**: Correcta visualización de caracteres especiales y acentos en español.
+- **Precios localizados**: Todos los precios en pesos mexicanos (MXN).
+- **Preparado para notificación por correo**: Estructura lista para enviar la cotización al administrador.
 
 ## Roadmap completado
 1. ✅ Estructura base Astro + Tailwind
@@ -53,11 +55,19 @@ Este proyecto es un catálogo digital de servicios web pensado para apoyar a ven
 6. ✅ Deploy a Netlify
 
 ## Próximos pasos
-1. Implementar API serverless para envío de correos
+1. **Crear endpoint para envío de correo**: Implementar un endpoint (API serverless o backend) para enviar la información de la cotización al correo del administrador: ventas@edenmendez.com
 2. Añadir más servicios y planes
 3. Mejorar validaciones de formulario
 4. Implementar seguimiento y analytics
 5. Crear panel de administración para gestión de servicios
+
+---
+
+### Pendiente inmediato
+> **Crear un endpoint para el envío de correo con la información de la cotización al administrador**
+> - Correo destino: ventas@edenmendez.com
+> - El endpoint debe recibir todos los datos de la cotización generada y enviarlos de forma estructurada.
+> - Opcional: enviar copia al cliente si se desea.
 
 ## Configuración de desarrollo
 ```bash
