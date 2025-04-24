@@ -377,10 +377,26 @@ const selectedServiceData = services.find(s => s.title === selectedService);
       };
     }
 
-    // Guardar datos en sessionStorage para la página de cotización
+    // Guardar datos en localStorage para la página de cotización
     localStorage.setItem('datosCotizacion', JSON.stringify(datosCotizacion));
 
-    // 1. Abrir la página de cotización en una nueva pestaña para el cliente
+    // 1. Enviar cotización al endpoint de WordPress
+    fetch('https://sionline.com.mx/wp-json/cotizador/v1/enviar', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(datosCotizacion)
+    })
+    .then(resp => resp.json())
+    .then(data => {
+      if (data.success) {
+        alert('¡Cotización enviada al administrador!');
+      } else {
+        alert('No se pudo enviar la cotización por correo.');
+      }
+    })
+    .catch(() => alert('Error al conectar con el servidor de correo.'));
+
+    // 2. Abrir la página de cotización en una nueva pestaña para el cliente
     window.open('/cotizacion', '_blank');
 
     // 2. Enviar correo electrónico al administrador
