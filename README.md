@@ -44,7 +44,28 @@ Este proyecto es un catálogo digital de servicios web pensado para apoyar a ven
 - **Visualización dinámica**: Todos los campos relevantes (incluyendo "Renta de equipo de cómputo") se muestran automáticamente y solo si tienen valor.
 - **Soporte UTF-8**: Correcta visualización de caracteres especiales y acentos en español.
 - **Precios localizados**: Todos los precios en pesos mexicanos (MXN).
-- **Preparado para notificación por correo**: Estructura lista para enviar la cotización al administrador.
+- **Envío automático de cotización**: Al enviar la cotización, los datos se transmiten automáticamente al correo del administrador (ventas@sionline.com.mx) usando un endpoint REST seguro en WordPress.
+
+---
+
+## Flujo de cotización
+1. El usuario selecciona servicio, plan y opciones en el cotizador.
+2. El cotizador calcula el precio y muestra el resumen detallado.
+3. Al hacer clic en "Enviar cotización":
+   - Se guarda la cotización en localStorage para mostrarla en la página resumen.
+   - Se envía la información completa por POST al endpoint REST en WordPress.
+   - El administrador recibe la cotización por correo en ventas@sionline.com.mx.
+4. El usuario puede imprimir o guardar la cotización desde la vista generada.
+
+---
+
+## Integración con WordPress
+- El backend de WordPress expone un endpoint REST personalizado (`/wp-json/cotizador/v1/enviar`).
+- El endpoint recibe todos los datos relevantes del cotizador y los reenvía por correo.
+- Soporta adjuntos (PDF) si se requiere en el futuro.
+- El correo llega siempre al administrador, garantizando seguimiento y registro de prospectos.
+
+---
 
 ## Roadmap completado
 1. ✅ Estructura base Astro + Tailwind
@@ -53,21 +74,21 @@ Este proyecto es un catálogo digital de servicios web pensado para apoyar a ven
 4. ✅ Sistema de cotización dinámica
 5. ✅ Integración de datos centralizada
 6. ✅ Deploy a Netlify
+7. ✅ Integración de correo para envío de cotizaciones
 
 ## Próximos pasos
-1. **Crear endpoint para envío de correo**: Implementar un endpoint (API serverless o backend) para enviar la información de la cotización al correo del administrador: ventas@sionline.com.mx
-2. Añadir más servicios y planes
-3. Mejorar validaciones de formulario
-4. Implementar seguimiento y analytics
-5. Crear panel de administración para gestión de servicios
+1. Añadir más servicios y planes
+2. Mejorar validaciones de formulario
+3. Implementar seguimiento y analytics
+4. Crear panel de administración para gestión de servicios
 
 ---
 
-### Pendiente inmediato
-> **Crear un endpoint para el envío de correo con la información de la cotización al administrador**
-> - Correo destino: ventas@sionline.com.mx
-> - El endpoint debe recibir todos los datos de la cotización generada y enviarlos de forma estructurada.
-> - Opcional: enviar copia al cliente si se desea.
+### Logros recientes
+- ✅ Flujo de cotización completamente funcional e integrado con WordPress.
+- ✅ Envío automático de cotización al correo del administrador (ventas@sionline.com.mx).
+- ✅ Centralización de datos y lógica en `services.ts`.
+- ✅ Soporte completo para español y precios localizados.
 
 ## Configuración de desarrollo
 ```bash
