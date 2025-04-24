@@ -71,10 +71,12 @@ export const services: Service[] = [
       { label: "Responsive", value: "Sí, adaptado a móviles" }
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
-      "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80",
-      "https://images.unsplash.com/photo-1465101178521-c1a9136a3b43?auto=format&fit=crop&w=400&q=80",
-      "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=400&q=80"
+      "/projects/wordpress/cabocon-min.png",
+      "/projects/wordpress/dlevents-min.png",
+      "/projects/wordpress/dulcedelicia-min.png",
+      "/projects/wordpress/elegevents-min.png",
+      "/projects/wordpress/loscabostransfer-min.png",
+      "/projects/wordpress/microsoporte-min.png"
     ],
     testimonials: [
       { quote: "¡El sitio superó nuestras expectativas y el soporte fue excelente!", author: "Cliente satisfecho" },
@@ -128,10 +130,10 @@ export const services: Service[] = [
       { label: "Multi-idioma", value: "Opcional" }
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80",
-      "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80",
-      "https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=400&q=80",
-      "https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=400&q=80"
+      "/projects/woocommerce/bellaterraloscabos-min.png",
+      "/projects/woocommerce/nacuii-min.png",
+      "/projects/woocommerce/romiboutique-min.png",
+      "/projects/woocommerce/saboracabo-min.png"
     ],
     testimonials: [
       { quote: "Nuestra tienda online incrementó ventas desde el primer mes.", author: "Negocio local" },
@@ -185,8 +187,8 @@ export const services: Service[] = [
       { label: "Animaciones", value: "Sí, modernas y ligeras" }
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
-      "https://images.unsplash.com/photo-1465101178521-c1a9136a3b43?auto=format&fit=crop&w=400&q=80"
+      "/projects/landingpage/pokerkings-min.png",
+      "/projects/landingpage/revitalizingrenovations-min.png"
     ],
     testimonials: [
       { quote: "Duplicamos nuestros leads en menos de un mes.", author: "Agencia de marketing" }
@@ -215,8 +217,7 @@ export const services: Service[] = [
       { label: "Soporte", value: "Ilimitado durante el periodo contratado" }
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80",
-      "https://images.unsplash.com/photo-1465101178521-c1a9136a3b43?auto=format&fit=crop&w=400&q=80"
+      
     ],
     testimonials: [
       { quote: "Nunca más he tenido problemas de caídas o hackeos.", author: "Administrador de portal" },
@@ -233,7 +234,7 @@ export const services: Service[] = [
     slug: "desarrollo-a-medida",
     description: "Soluciones personalizadas en WordPress, Astro, Svelte, Vue, Laravel y más.",
     icon: "💡",
-    image: "public/services/customdevelopment-min.jpg",
+    image: "/services/customdevelopment-min.jpg",
     bullets: [
       "Funcionalidad a la medida",
       "Integraciones avanzadas",
@@ -260,8 +261,8 @@ export const services: Service[] = [
       { label: "Metodología", value: "Ágil, entregas iterativas" }
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80",
-      "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+      "/projects/customdevelopment/saboracabo-min.png",
+      "/projects/customdevelopment/bellaterraloscabos-min.png"
     ],
     testimonials: [
       { quote: "El desarrollo fue justo lo que necesitábamos, ¡gran trabajo!", author: "Startup tecnológica" },
@@ -313,8 +314,7 @@ export const services: Service[] = [
       { label: "Soporte", value: "1 mes post-servicio" }
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80",
-      "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+      
     ],
     testimonials: [
       { quote: "Nuestra web ahora carga en segundos y subimos posiciones en Google.", author: "Empresa de servicios" }
@@ -365,8 +365,7 @@ export const services: Service[] = [
       { label: "Seguimiento", value: "Opcional" }
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1465101178521-c1a9136a3b43?auto=format&fit=crop&w=400&q=80",
-      "https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=400&q=80"
+      
     ],
     testimonials: [
       { quote: "Las sesiones de consultoría nos ayudaron a definir una estrategia clara.", author: "Gerente de marketing" }
@@ -417,8 +416,7 @@ export const services: Service[] = [
       { label: "Análisis de seguridad", value: "Incluido" }
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80",
-      "https://images.unsplash.com/photo-1465101178521-c1a9136a3b43?auto=format&fit=crop&w=400&q=80"
+      
     ],
     testimonials: [
       { quote: "Recuperamos nuestro sitio web sin perder datos ni SEO.", author: "Dueño de sitio web" }
