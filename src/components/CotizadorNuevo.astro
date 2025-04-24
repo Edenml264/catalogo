@@ -55,8 +55,22 @@ const selectedServiceData = services.find(s => s.title === selectedService);
     </div>
   </div>
   
+  <!-- Campos extra para Renta de equipo de cómputo -->
+  <div id="campos-renta" class="border-t border-gray-200 pt-4 mt-4 hidden">
+    <h4 class="font-medium text-blue-800 mb-3">Detalles de renta:</h4>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <label for="diasRenta" class="block mb-1 font-medium">Días de renta</label>
+        <input type="number" id="diasRenta" min="1" value="1" class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-cyan-200 outline-none" />
+      </div>
+      <div>
+        <label for="cantidadEquipos" class="block mb-1 font-medium">Cantidad de equipos</label>
+        <input type="number" id="cantidadEquipos" min="1" value="1" class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-cyan-200 outline-none" />
+      </div>
+    </div>
+  </div>
   <!-- Opciones adicionales -->
-  <div class="border-t border-gray-200 pt-4 mt-4">
+  <div id="opciones-adicionales" class="border-t border-gray-200 pt-4 mt-4">
     <h4 class="font-medium text-blue-800 mb-3">Opciones adicionales:</h4>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div>
@@ -247,33 +261,43 @@ const selectedServiceData = services.find(s => s.title === selectedService);
   
   // Calcular el total de la cotización
   function calcularTotal() {
-    // Obtener precio base directamente del dataset donde lo almacenamos
+    const servicioSeleccionado = servicioSelect.value;
+    const esRentaComputo = servicioSeleccionado === 'Renta de equipo de cómputo';
     const precioBaseValor = parseInt(precioBase.dataset.value || '0');
-    console.log('Precio base procesado:', precioBaseValor);
-    
-    // Calcular adicionales
-    const numPaginas = parseInt(document.getElementById('numPaginas').value);
-    const diseno = parseInt(document.getElementById('diseno').value);
-    const pagos = parseInt(document.getElementById('pagos').value);
-    const seo = parseInt(document.getElementById('seo').value);
-    
-    // Costo adicional por páginas extra (más de 5)
-    const costoPaginas = numPaginas > 5 ? (numPaginas - 5) * 800 : 0; // Ajustado a MXN
-    
-    // Sumar todos los adicionales
-    const adicionales = diseno + pagos + seo + costoPaginas;
-    
-    // Actualizar precio adicionales
-    precioAdicionales.textContent = `$${adicionales.toLocaleString()} MXN`;
-    
-    // Calcular y mostrar total (ahora todo está en MXN)
-    const total = precioBaseValor + adicionales;
+    let total = 0;
+    let adicionales = 0;
+
+    if (esRentaComputo) {
+      const dias = parseInt(document.getElementById('diasRenta').value) || 1;
+      const cantidad = parseInt(document.getElementById('cantidadEquipos').value) || 1;
+      total = precioBaseValor * dias * cantidad;
+      precioAdicionales.textContent = '$0 MXN';
+    } else {
+      // Calcular adicionales
+      const numPaginas = parseInt(document.getElementById('numPaginas').value);
+      const diseno = parseInt(document.getElementById('diseno').value);
+      const pagos = parseInt(document.getElementById('pagos').value);
+      const seo = parseInt(document.getElementById('seo').value);
+      const costoPaginas = numPaginas > 5 ? (numPaginas - 5) * 800 : 0;
+      adicionales = diseno + pagos + seo + costoPaginas;
+      precioAdicionales.textContent = `$${adicionales.toLocaleString()} MXN`;
+      total = precioBaseValor + adicionales;
+    }
     totalElement.textContent = `$${total.toLocaleString()} MXN`;
   }
   
   // Event Listeners
   servicioSelect.addEventListener('change', async () => {
     const servicioSeleccionado = servicioSelect.value;
+    const esRentaComputo = servicioSeleccionado === 'Renta de equipo de cómputo';
+    // Mostrar/ocultar campos según el servicio
+    document.getElementById('campos-renta').classList.toggle('hidden', !esRentaComputo);
+    document.getElementById('opciones-adicionales').classList.toggle('hidden', esRentaComputo);
+    // Resetear valores de campos de renta si se ocultan
+    if (!esRentaComputo) {
+      document.getElementById('diasRenta').value = 1;
+      document.getElementById('cantidadEquipos').value = 1;
+    }
     if (servicioSeleccionado) {
       await cargarPlanes(servicioSeleccionado);
     } else {
@@ -281,6 +305,11 @@ const selectedServiceData = services.find(s => s.title === selectedService);
       precioBase.textContent = '$0';
       calcularTotal();
     }
+  });
+  
+  ['diasRenta', 'cantidadEquipos'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('change', calcularTotal);
   });
   
   planSelect.addEventListener('change', mostrarCaracteristicas);
@@ -298,61 +327,69 @@ const selectedServiceData = services.find(s => s.title === selectedService);
     const telefono = document.getElementById('telefonoCliente').value.trim();
     const servicio = servicioSelect.value;
     const plan = planSelect.value;
-    
+    const esRentaComputo = servicio === 'Renta de equipo de cómputo';
+    let diasRenta = 1;
+    let cantidadEquipos = 1;
+
     if (!nombre || !correo || !telefono || !servicio || !plan) {
       formError.textContent = 'Por favor, completa todos los campos requeridos.';
       formError.classList.remove('hidden');
       return;
     }
-    
-    // Recopilar todos los datos de la cotización
-    const numPaginas = document.getElementById('numPaginas').value;
-    const diseno = document.getElementById('diseno').options[document.getElementById('diseno').selectedIndex].text;
-    const pagos = document.getElementById('pagos').options[document.getElementById('pagos').selectedIndex].text;
-    const seo = document.getElementById('seo').options[document.getElementById('seo').selectedIndex].text;
-    
-    // Obtener precios
-    const precioBaseText = precioBase.textContent;
-    const precioPaginasValue = parseInt(numPaginas) > 5 ? (parseInt(numPaginas) - 5) * 800 : 0;
-    const precioPaginas = precioPaginasValue > 0 ? `$${precioPaginasValue.toLocaleString()} MXN` : '$0 MXN';
-    const precioDiseno = diseno.includes('Sí') ? '$3,000 MXN' : '$0 MXN';
-    const precioPagos = pagos.includes('Sí') ? '$5,000 MXN' : '$0 MXN';
-    const precioSeo = seo.includes('Sí') ? '$2,000 MXN' : '$0 MXN';
-    const total = totalElement.textContent;
-    
-    // Crear objeto con todos los datos
-    const datosCotizacion = {
+
+    let datosCotizacion = {
       nombre,
       correo,
       telefono,
       servicio,
       plan,
-      numPaginas,
-      diseno,
-      pagos,
-      seo,
-      precioBase: precioBaseText,
-      precioPaginas,
-      precioDiseno,
-      precioPagos,
-      precioSeo,
-      total,
+      total: totalElement.textContent,
+      precioBase: precioBase.textContent,
       fecha: new Date().toLocaleDateString('es-MX')
     };
-    
+
+    if (esRentaComputo) {
+      diasRenta = parseInt(document.getElementById('diasRenta').value) || 1;
+      cantidadEquipos = parseInt(document.getElementById('cantidadEquipos').value) || 1;
+      datosCotizacion.diasRenta = diasRenta;
+      datosCotizacion.cantidadEquipos = cantidadEquipos;
+    } else {
+      // Recopilar todos los datos de la cotización para otros servicios
+      const numPaginas = document.getElementById('numPaginas').value;
+      const diseno = document.getElementById('diseno').options[document.getElementById('diseno').selectedIndex].text;
+      const pagos = document.getElementById('pagos').options[document.getElementById('pagos').selectedIndex].text;
+      const seo = document.getElementById('seo').options[document.getElementById('seo').selectedIndex].text;
+      const precioPaginasValue = parseInt(numPaginas) > 5 ? (parseInt(numPaginas) - 5) * 800 : 0;
+      const precioPaginas = precioPaginasValue > 0 ? `$${precioPaginasValue.toLocaleString()} MXN` : '$0 MXN';
+      const precioDiseno = diseno.includes('Sí') ? '$3,000 MXN' : '$0 MXN';
+      const precioPagos = pagos.includes('Sí') ? '$5,000 MXN' : '$0 MXN';
+      const precioSeo = seo.includes('Sí') ? '$2,000 MXN' : '$0 MXN';
+      datosCotizacion = {
+        ...datosCotizacion,
+        numPaginas,
+        diseno,
+        pagos,
+        seo,
+        precioPaginas,
+        precioDiseno,
+        precioPagos,
+        precioSeo
+      };
+    }
+
     // Guardar datos en sessionStorage para la página de cotización
     sessionStorage.setItem('datosCotizacion', JSON.stringify(datosCotizacion));
-    
+
     // 1. Abrir la página de cotización en una nueva pestaña para el cliente
     window.open('/cotizacion', '_blank');
-    
+
     // 2. Enviar correo electrónico al administrador
     enviarCorreoAdministrador(datosCotizacion);
-    
+
     // Mostrar mensaje de éxito
     formSuccess.classList.remove('hidden');
     formError.classList.add('hidden');
-    
+
     // Resetear el formulario después de un tiempo
     resetearFormulario();
   });
