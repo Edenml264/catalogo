@@ -12,9 +12,9 @@
         body { font-family: 'Inter', sans-serif; background: #f9f9f9; margin: 0; padding: 0; color: #333;}
         .cotizacion-container { max-width: 700px; margin: 30px auto; background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 30px; }
         h2 { text-align: center; color: #2563eb; }
-        .datos-cliente, .datos-empresa { margin-bottom: 30px; }
-        .datos-cliente h3, .datos-empresa h3 { color: #333; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 15px; }
-        .datos-cliente p, .datos-empresa p { margin: 4px 0; }
+        .datos-cliente, .datos-vendedor, .datos-empresa { margin-bottom: 30px; }
+        .datos-cliente h3, .datos-vendedor h3, .datos-empresa h3 { color: #333; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 15px; }
+        .datos-cliente p, .datos-vendedor p, .datos-empresa p { margin: 4px 0; }
         table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
         th, td { border: 1px solid #eee; padding: 10px; text-align: left; }
         th { background: #f0f4f8; }
@@ -53,6 +53,9 @@
         .btn-imprimir:hover {
             background: #1d4ed8;
         }
+        .datos-vendedor { 
+            text-align: right;
+        }
         @media (max-width: 600px) {
             .cabecera-cotizacion {
                 flex-direction: column;
@@ -67,6 +70,9 @@
                 text-align: left;
                 margin-top: 10px;
             }
+            .datos-vendedor { 
+                text-align: left;
+            }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
@@ -78,7 +84,7 @@
                 <img src="/logo_sio.webp" alt="Logo de la empresa" style="height:60px;">
             </div>
             <div class="titulo-cotizacion">
-                <h2>Cotización</h2>
+                <h2>Estimación de servicios</h2>
             </div>
             <div class="info-empresa">
                 <p>ventas@sionline.com.mx</p>
@@ -87,12 +93,20 @@
             </div>
         </div>
 
-        <div class="datos-cliente">
-            <h3>Datos del Cliente</h3>
-            <p><strong>Nombre:</strong> <span id="nombreCliente"></span></p>
-            <p><strong>Correo electrónico:</strong> <span id="correoCliente"></span></p>
-            <p><strong>Teléfono:</strong> <span id="telefonoCliente"></span></p>
-            <p><strong>Fecha:</strong> <span id="fechaCotizacion"></span></p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            <div class="datos-cliente">
+                <h3>Datos del Cliente</h3>
+                <p><strong>Nombre:</strong> <span id="nombreCliente"></span></p>
+                <p><strong>Correo electrónico:</strong> <span id="correoCliente"></span></p>
+                <p><strong>Teléfono:</strong> <span id="telefonoCliente"></span></p>
+                <p><strong>Fecha:</strong> <span id="fechaCotizacion"></span></p>
+            </div>
+            <div class="datos-vendedor">
+                <h3>Datos del Vendedor</h3>
+                <p><strong>Nombre:</strong> <span id="nombreVendedor"></span></p>
+                <p><strong>Correo electrónico:</strong> <span id="correoVendedor"></span></p>
+                <p><strong>Teléfono:</strong> <span id="telefonoVendedor"></span></p>
+            </div>
         </div>
 
         <table>
@@ -111,7 +125,7 @@
             Total estimado: <span id="totalCotizacion"></span>
         </div>
         <div style="text-align:right; margin-top:20px; margin-bottom:20px;">
-            <button onclick="window.print()" class="btn-imprimir">Imprimir Cotización</button>
+            <button onclick="window.print()" class="btn-imprimir">Imprimir</button>
         </div>
         <div class="footer">
             <p>Gracias por confiar en nuestros servicios. La cotización es válida por 15 días y no incluye impuestos.<br>Términos y Condiciones: <br> 
@@ -141,10 +155,17 @@
                 actualizarElemento('nombreCliente', datos.nombre);
                 actualizarElemento('correoCliente', datos.correo);
                 actualizarElemento('telefonoCliente', datos.telefono);
-                
-                // Fecha actual formateada
-                const fecha = new Date();
-                actualizarElemento('fechaCotizacion', fecha.toLocaleDateString('es-MX'));
+                actualizarElemento('fechaCotizacion', new Date().toLocaleDateString('es-MX'));
+                // Llenar datos del vendedor si existen
+                if (datos.vendedor) {
+                    actualizarElemento('nombreVendedor', datos.vendedor.name || '');
+                    actualizarElemento('correoVendedor', datos.vendedor.email || '');
+                    actualizarElemento('telefonoVendedor', datos.vendedor.phone || '');
+                } else {
+                    actualizarElemento('nombreVendedor', '');
+                    actualizarElemento('correoVendedor', '');
+                    actualizarElemento('telefonoVendedor', '');
+                }
                 
                 // Llenar tabla de cotización de forma dinámica y estilizada
                 const camposTabla = [

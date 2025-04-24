@@ -1,5 +1,6 @@
 ---
 import { services } from '../data/services.ts';
+import { salesAgents } from '../data/sales.ts';
 const { servicio } = Astro.props;
 let selectedService = servicio || '';
 
@@ -13,7 +14,7 @@ const selectedServiceData = services.find(s => s.title === selectedService);
   <div id="form-error" class="text-red-500 text-sm mb-2 hidden"></div>
   <div id="form-success" class="text-green-600 font-semibold mb-2 hidden">¡Gracias! Te enviaremos tu cotización pronto.</div>
   
-  <!-- Datos del cliente -->
+  <!-- Datos del cliente y vendedor -->
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     <div>
       <label for="nombreCliente" class="block mb-1 font-medium">Nombre completo</label>
@@ -33,6 +34,15 @@ const selectedServiceData = services.find(s => s.title === selectedService);
         <option value="">Selecciona un servicio</option>
         {Array.isArray(services) && services.map(s => (
           <option value={s.title} selected={selectedService === s.title}>{s.title}</option>
+        ))}
+      </select>
+    </div>
+    <div class="md:col-span-2">
+      <label for="vendedorSelect" class="block mb-1 font-medium">Vendedor responsable</label>
+      <select id="vendedorSelect" name="vendedorSelect" required class="w-full border border-blue-300 rounded px-4 py-2 focus:ring-2 focus:ring-blue-200 outline-none">
+        <option value="">Selecciona un vendedor</option>
+        {Array.isArray(salesAgents) && salesAgents.map((agent, idx) => (
+          <option value={idx}>{agent.name} - {agent.email}</option>
         ))}
       </select>
     </div>
@@ -127,6 +137,11 @@ const selectedServiceData = services.find(s => s.title === selectedService);
   window.servicioPreseleccionado = selectedService;
   console.log('Servicios cargados:', window.serviciosCatalogo);
   console.log('Servicio preseleccionado:', window.servicioPreseleccionado);
+</script>
+<script is:inline define:vars={{ salesAgentsData: JSON.stringify(salesAgents) }}>
+  // Definir los agentes de ventas como variable global
+  window.salesAgents = JSON.parse(salesAgentsData);
+  console.log('Agentes de ventas cargados:', window.salesAgents);
 </script>
 
 <script type="module">
@@ -375,6 +390,23 @@ const selectedServiceData = services.find(s => s.title === selectedService);
         precioPagos,
         precioSeo
       };
+    }
+
+    // Agregar datos del vendedor seleccionado
+    const vendedorSelect = document.getElementById('vendedorSelect');
+    let vendedor = null;
+    let vendedorIdx = vendedorSelect ? vendedorSelect.value : '';
+    if (vendedorIdx !== '' && !isNaN(Number(vendedorIdx)) && window.salesAgents && window.salesAgents[Number(vendedorIdx)]) {
+      vendedor = window.salesAgents[Number(vendedorIdx)];
+    }
+    datosCotizacion.vendedor = vendedor;
+    console.log('Vendedor seleccionado:', vendedor);
+    console.log('Datos cotización:', datosCotizacion);
+
+    // Validar que haya vendedor seleccionado
+    if (!vendedor) {
+      alert('Por favor selecciona un vendedor antes de enviar la cotización.');
+      return;
     }
 
     // Guardar datos en localStorage para la página de cotización
