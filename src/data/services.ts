@@ -20,503 +20,228 @@ export interface Service {
 
 export const services: Service[] = [
   {
-    title: "Sitio Web WordPress Profesional",
-    slug: "wordpress-profesional",
-    description: "Desarrollo de sitios web modernos, seguros y autoadministrables.",
-    icon: "🌐",
-    image: "/services/wordpress-min.jpg",
+    title: "Servicios de DJ",
+    slug: "dj",
+    description: "DJ profesional para eventos sociales y corporativos. Música personalizada, ambiente y animación para bodas, fiestas y celebraciones.",
+    icon: "🎧",
+    image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80",
     bullets: [
-      "Diseño personalizado",
-      "Optimización SEO básica",
-      "Soporte y capacitación"
+      "Música personalizada para cada evento",
+      "Equipo de audio profesional",
+      "Animación y conducción"
     ],
-    price: "Desde $6,500 MXN",
-    plans: [
-      {
-        name: "Básico",
-        description: "Sitio institucional de hasta 5 páginas.",
-        price: "$6,500 MXN",
-        features: [
-          "Diseño personalizado",
-          "SEO básico",
-          "Capacitación incluida"
-        ]
-      },
-      {
-        name: "Pro",
-        description: "Incluye tienda básica y blog.",
-        price: "$11,000 MXN",
-        features: [
-          "Todo lo del Básico",
-          "Tienda WooCommerce",
-          "Blog corporativo"
-        ]
-      },
-      {
-        name: "Premium",
-        description: "Hasta 15 páginas, optimización avanzada y soporte extendido.",
-        price: "$17,500 MXN",
-        features: [
-          "Todo lo del Pro",
-          "Optimización SEO avanzada",
-          "Soporte 6 meses"
-        ]
-      }
-    ],
+    price: "Desde $8,000 MXN",
     features: [
-      { label: "Tecnologías", value: "WordPress, HTML5, CSS3, SEO básico" },
-      { label: "Tiempo de entrega", value: "2-4 semanas" },
-      { label: "Soporte", value: "3 meses incluido" },
-      { label: "Administrable", value: "Sí" },
-      { label: "Responsive", value: "Sí, adaptado a móviles" }
+      { label: "Duración", value: "Hasta 3 horas" },
+      { label: "Incluye", value: "DJ, consola, bocinas, micrófono" },
+      { label: "Repertorio", value: "Personalizable" },
+      { label: "Montaje", value: "1 hora antes del evento" }
     ],
     gallery: [
-      "/projects/wordpress/cabocon-min.png",
-      "/projects/wordpress/dlevents-min.png",
-      "/projects/wordpress/dulcedelicia-min.png",
-      "/projects/wordpress/elegevents-min.png",
-      "/projects/wordpress/loscabostransfer-min.png",
-      "/projects/wordpress/microsoporte-min.png"
+      "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
     ],
     testimonials: [
-      { quote: "¡El sitio superó nuestras expectativas y el soporte fue excelente!", author: "Cliente satisfecho" },
-      { quote: "Rápidos, atentos y muy profesionales. ¡Recomendados!", author: "Emprendedor digital" }
+      { quote: "¡El DJ puso a todos a bailar toda la noche!", author: "Novia feliz" },
+      { quote: "Excelente ambiente y selección musical.", author: "Organizador de evento" }
     ],
     faq: [
-      { question: "¿Puedo autoadministrar mi sitio?", answer: "Sí, te capacitamos para que puedas hacer cambios fácilmente." },
-      { question: "¿Incluye dominio y hosting?", answer: "Podemos asesorarte en la contratación, pero no están incluidos por defecto." },
-      { question: "¿El sitio es seguro?", answer: "Sí, aplicamos buenas prácticas de seguridad y actualizaciones." },
-      { question: "¿Cuáles son las formas de pago disponibles?", answer: "Aceptamos transferencia bancaria, tarjetas de crédito/débito y pagos en efectivo en Los Cabos." },
-      { question: "¿Puedo solicitar factura?", answer: "Sí, emitimos factura electrónica (CFDI) para todos nuestros servicios. Solicítala al momento de tu pago." },
-      { question: "¿Cuánto tarda el proceso desde la contratación hasta la entrega?", answer: "El tiempo depende del servicio y la carga de trabajo, pero te damos una estimación clara antes de iniciar y mantenemos comunicación constante." },
-      { question: "¿Puedo solicitar cambios una vez iniciado el proyecto?", answer: "Sí, puedes solicitar ajustes. Dependiendo del alcance, pueden generar costos adicionales, pero siempre te avisaremos antes." },
-      { question: "¿Ofrecen soporte después de la entrega?", answer: "Sí, todos nuestros servicios incluyen un periodo de soporte. También ofrecemos paquetes de soporte extendido." },
-      { question: "¿Qué pasa si no estoy satisfecho con el resultado?", answer: "Trabajamos contigo hasta que estés conforme. Nuestro proceso incluye revisiones y ajustes según tus comentarios." },
-      { question: "¿El servicio incluye capacitación para usar mi sitio?", answer: "Sí, incluimos capacitación básica para que puedas administrar tu sitio con facilidad." }
+      { question: "¿Se puede pedir canciones específicas?", answer: "Sí, puedes compartir tu playlist o pedir canciones durante el evento." },
+      { question: "¿Incluye iluminación?", answer: "Podemos cotizar paquetes con iluminación adicional." }
     ]
   },
   {
-    title: "Tienda en línea (WooCommerce)",
-    slug: "tienda-online-woocommerce",
-    description: "Vende productos o servicios con una tienda online robusta y fácil de gestionar.",
-    icon: "🛒",
-    image: "/services/tiendaonline-min.jpg",
+    title: "Renta de equipo Audiovisual",
+    slug: "renta-equipo-audiovisual",
+    description: "Renta de bocinas, micrófonos, proyectores, pantallas y más para eventos de cualquier tamaño.",
+    icon: "🔊",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80",
     bullets: [
-      "Integración de pagos",
-      "Gestión de inventario",
-      "Reportes de ventas"
+      "Bocinas y audio profesional",
+      "Micrófonos inalámbricos",
+      "Proyectores y pantallas LED"
     ],
-    price: "Desde $13,000 MXN",
-    plans: [
-      {
-        name: "Starter",
-        description: "Tienda básica hasta 20 productos.",
-        price: "$13,000 MXN",
-        features: [
-          "Pasarelas de pago",
-          "Gestión de productos",
-          "SEO básico"
-        ]
-      },
-      {
-        name: "Avanzada",
-        description: "Incluye integraciones y reportes avanzados.",
-        price: "$22,000 MXN",
-        features: [
-          "Todo lo de Starter",
-          "Integración con envíos",
-          "Reportes personalizados"
-        ]
-      }
-    ],
-    features: [
-      { label: "Plataforma", value: "WooCommerce, WordPress" },
-      { label: "Pasarelas de pago", value: "PayPal, Stripe, MercadoPago" },
-      { label: "Soporte", value: "2 meses incluido" },
-      { label: "Gestión de envíos", value: "Sí, configurable" },
-      { label: "Multi-idioma", value: "Opcional" }
-    ],
-    gallery: [
-      "/projects/woocommerce/bellaterraloscabos-min.png",
-      "/projects/woocommerce/nacuii-min.png",
-      "/projects/woocommerce/romiboutique-min.png",
-      "/projects/woocommerce/saboracabo-min.png"
-    ],
-    testimonials: [
-      { quote: "Nuestra tienda online incrementó ventas desde el primer mes.", author: "Negocio local" },
-      { quote: "La integración de pagos fue rápida y sin complicaciones.", author: "Dueña de boutique" }
-    ],
-    faq: [
-      { question: "¿Puedo gestionar mis productos fácilmente?", answer: "Sí, el panel es intuitivo y te capacitamos en su uso." },
-      { question: "¿Incluye integración con envíos?", answer: "Sí, puedes configurar proveedores de envío nacionales e internacionales." },
-      { question: "¿Puedo vender productos digitales?", answer: "Sí, WooCommerce soporta productos físicos y digitales." },
-      { question: "¿Cuáles son las formas de pago disponibles?", answer: "Aceptamos transferencia bancaria, tarjetas de crédito/débito y pagos en efectivo en Los Cabos." },
-      { question: "¿Puedo solicitar factura?", answer: "Sí, emitimos factura electrónica (CFDI) para todos nuestros servicios. Solicítala al momento de tu pago." },
-      { question: "¿Cuánto tarda el proceso desde la contratación hasta la entrega?", answer: "El tiempo depende del servicio y la carga de trabajo, pero te damos una estimación clara antes de iniciar y mantenemos comunicación constante." },
-      { question: "¿Puedo solicitar cambios una vez iniciado el proyecto?", answer: "Sí, puedes solicitar ajustes. Dependiendo del alcance, pueden generar costos adicionales, pero siempre te avisaremos antes." },
-      { question: "¿Ofrecen soporte después de la entrega?", answer: "Sí, todos nuestros servicios incluyen un periodo de soporte. También ofrecemos paquetes de soporte extendido." },
-      { question: "¿Qué pasa si no estoy satisfecho con el resultado?", answer: "Trabajamos contigo hasta que estés conforme. Nuestro proceso incluye revisiones y ajustes según tus comentarios." },
-      { question: "¿El servicio incluye capacitación para usar mi tienda?", answer: "Sí, incluimos capacitación básica para que puedas administrar tu tienda con facilidad." }
-    ]
-  },
-  {
-    title: "Landing Page de Alto Impacto",
-    slug: "landing-page-impacto",
-    description: "Páginas diseñadas para captar leads y aumentar conversiones.",
-    icon: "🚀",
-    image: "/services/landingpage-min.jpg",
-    bullets: [
-      "Diseño enfocado en conversiones",
-      "Integración con formularios",
-      "Optimización para móviles"
-    ],
-    price: "$4,500 MXN",
-    plans: [
-      {
-        name: "Landing única",
-        description: "Página de aterrizaje personalizada.",
-        price: "$4,500 MXN",
-        features: [
-          "Diseño responsive",
-          "Integración con formularios",
-          "Optimización SEO"
-        ]
-      },
-      {
-        name: "Landing + A/B Testing",
-        description: "Incluye testeo de variantes y reportes.",
-        price: "$6,500 MXN",
-        features: [
-          "Todo lo anterior",
-          "Implementación de pruebas A/B",
-          "Informe de resultados"
-        ]
-      }
-    ],
-    features: [
-      { label: "Tiempo de entrega", value: "1 semana" },
-      { label: "Formularios", value: "Personalizados y conectados a tu email" },
-      { label: "Optimización SEO", value: "Incluida" },
-      { label: "A/B Testing", value: "Opcional" },
-      { label: "Animaciones", value: "Sí, modernas y ligeras" }
-    ],
-    gallery: [
-      "/projects/landingpage/pokerkings-min.png",
-      "/projects/landingpage/revitalizingrenovations-min.png"
-    ],
-    testimonials: [
-      { quote: "Duplicamos nuestros leads en menos de un mes.", author: "Agencia de marketing" }
-    ],
-    faq: [
-      { question: "¿Puedo conectar la landing con mi CRM?", answer: "Sí, podemos integrar la landing con tu CRM favorito." },
-      { question: "¿El diseño es único?", answer: "Sí, cada landing es personalizada para tu marca y objetivo." }
-    ]
-  },
-  {
-    title: "Mantenimiento y Soporte Web",
-    slug: "mantenimiento-soporte-web",
-    description: "Mantén tu web segura, actualizada y libre de problemas.",
-    icon: "🛠️",
-    image: "/services/maintenance-support-min.jpg",
-    bullets: [
-      "Actualizaciones periódicas",
-      "Backups automáticos",
-      "Soporte técnico prioritario"
-    ],
-    features: [
-      { label: "Cobertura", value: "WordPress, WooCommerce y sitios estáticos" },
-      { label: "Frecuencia de backups", value: "Diaria o semanal" },
-      { label: "Monitoreo de seguridad", value: "Incluido" },
-      { label: "Tiempo de respuesta", value: "Menos de 24h" },
-      { label: "Soporte", value: "Ilimitado durante el periodo contratado" }
-    ],
-    gallery: [
-      
-    ],
-    testimonials: [
-      { quote: "Nunca más he tenido problemas de caídas o hackeos.", author: "Administrador de portal" },
-      { quote: "El soporte responde rápido y siempre soluciona.", author: "Pyme digital" }
-    ],
-    faq: [
-      { question: "¿Incluye restauración ante fallos?", answer: "Sí, restauramos tu sitio desde backups en caso de problemas." },
-      { question: "¿El soporte cubre cambios de contenido?", answer: "Incluye cambios menores y asistencia técnica general." },
-      { question: "¿Puedo cancelar en cualquier momento?", answer: "Sí, sin penalización." }
-    ]
-  },
-  {
-    title: "Desarrollo a Medida",
-    slug: "desarrollo-a-medida",
-    description: "Soluciones personalizadas en WordPress, Astro, Svelte, Vue, Laravel y más.",
-    icon: "💡",
-    image: "/services/customdevelopment-min.jpg",
-    bullets: [
-      "Funcionalidad a la medida",
-      "Integraciones avanzadas",
-      "Escalabilidad garantizada"
-    ],
-    price: "A cotizar",
-    plans: [
-      {
-        name: "Desarrollo básico",
-        description: "Funcionalidad personalizada simple (formularios, landings, etc.)",
-        price: "Desde $7,000 MXN"
-      },
-      {
-        name: "Desarrollo avanzado",
-        description: "Integraciones, dashboards, portales, APIs, etc.",
-        price: "A cotizar"
-      }
-    ],
-    features: [
-      { label: "Lenguajes/Frameworks", value: "WordPress, Astro, Svelte, Vue, Laravel, Node.js" },
-      { label: "Integraciones", value: "APIs, pagos, CRMs, ERPs" },
-      { label: "Soporte", value: "A medida del proyecto" },
-      { label: "Documentación", value: "Incluida" },
-      { label: "Metodología", value: "Ágil, entregas iterativas" }
-    ],
-    gallery: [
-      "/projects/customdevelopment/saboracabo-min.png",
-      "/projects/customdevelopment/bellaterraloscabos-min.png"
-    ],
-    testimonials: [
-      { quote: "El desarrollo fue justo lo que necesitábamos, ¡gran trabajo!", author: "Startup tecnológica" },
-      { quote: "Excelente comunicación y resultados a tiempo.", author: "Director de IT" }
-    ],
-    faq: [
-      { question: "¿Puedo solicitar cualquier funcionalidad?", answer: "Sí, analizamos tu requerimiento y te asesoramos en la mejor solución." },
-      { question: "¿Incluye soporte post-lanzamiento?", answer: "Sí, ofrecemos distintos planes de soporte según tu necesidad." }
-    ]
-  },
-  {
-    title: "Optimización SEO y Velocidad",
-    slug: "optimizacion-seo-velocidad",
-    description: "Mejora el posicionamiento y la rapidez de tu web para atraer más clientes.",
-    icon: "⚡",
-    image: "/services/seo-min.jpg",
-    bullets: [
-      "Auditoría SEO completa",
-      "Optimización de carga",
-      "Mejores prácticas técnicas"
-    ],
-    price: "Desde $5,500 MXN",
-    plans: [
-      {
-        name: "Básico",
-        description: "Optimización de velocidad y ajustes básicos.",
-        price: "$5,500 MXN",
-        features: [
-          "Optimización de velocidad",
-          "Ajustes SEO básicos",
-          "Informe de resultados"
-        ]
-      },
-      {
-        name: "Completo",
-        description: "Optimización completa con seguimiento.",
-        price: "$8,500 MXN",
-        features: [
-          "Optimización completa",
-          "Informe detallado",
-          "Seguimiento 1 mes"
-        ]
-      }
-    ],
-    features: [
-      { label: "Tipo de optimización", value: "SEO técnico, On-page, velocidad de carga" },
-      { label: "Herramientas usadas", value: "Google PageSpeed, GTmetrix, SEMrush" },
-      { label: "Informe de resultados", value: "Incluido" },
-      { label: "Soporte", value: "1 mes post-servicio" }
-    ],
-    gallery: [
-      
-    ],
-    testimonials: [
-      { quote: "Nuestra web ahora carga en segundos y subimos posiciones en Google.", author: "Empresa de servicios" }
-    ],
-    faq: [
-      { question: "¿Sirve para cualquier tipo de web?", answer: "Sí, analizamos y optimizamos sitios WordPress, tiendas y páginas estáticas." },
-      { question: "¿Incluye reporte de mejoras?", answer: "Sí, recibirás un informe detallado antes y después del servicio." }
-    ]
-  },
-  {
-    title: "Consultoría y Asesoría Web",
-    slug: "consultoria-asesoria-web",
-    description: "Resuelve dudas y mejora tu estrategia digital con expertos.",
-    icon: "🎯",
-    image: "/services/consultingservices-min.jpg",
-    bullets: [
-      "Diagnóstico profesional",
-      "Recomendaciones personalizadas",
-      "Acompañamiento estratégico"
-    ],
-    price: "Desde $1,800 MXN",
-    plans: [
-      {
-        name: "Sesión única",
-        description: "Consultoría puntual para resolver dudas específicas.",
-        price: "$1,800 MXN",
-        features: [
-          "1 hora de consultoría",
-          "Recomendaciones personalizadas",
-          "Informe posterior"
-        ]
-      },
-      {
-        name: "Paquete mensual",
-        description: "Acompañamiento continuo para tu proyecto digital.",
-        price: "$5,000 MXN",
-        features: [
-          "4 sesiones",
-          "Seguimiento semanal",
-          "Soporte por WhatsApp"
-        ]
-      }
-    ],
-    features: [
-      { label: "Modalidad", value: "Online o presencial" },
-      { label: "Duración", value: "Sesiones de 1h o paquetes mensuales" },
-      { label: "Informe de sesión", value: "Incluido" },
-      { label: "Seguimiento", value: "Opcional" }
-    ],
-    gallery: [
-      
-    ],
-    testimonials: [
-      { quote: "Las sesiones de consultoría nos ayudaron a definir una estrategia clara.", author: "Gerente de marketing" }
-    ],
-    faq: [
-      { question: "¿Puedo contratar solo una sesión?", answer: "Sí, puedes solicitar sesiones únicas o paquetes según tu necesidad." },
-      { question: "¿Incluye análisis de mi web?", answer: "Sí, revisamos tu web y te damos recomendaciones personalizadas." }
-    ]
-  },
-  {
-    title: "Migraciones y Rescate Web",
-    slug: "migraciones-rescate-web",
-    description: "Recupera o migra tu sitio sin perder información ni posicionamiento.",
-    icon: "🔄",
-    image: "/services/webbackup-min.jpg",
-    bullets: [
-      "Migración segura",
-      "Recuperación de sitios hackeados",
-      "Preservación de SEO"
-    ],
-    price: "Desde $3,500 MXN",
-    plans: [
-      {
-        name: "Básica",
-        description: "Migración de contenido y configuración básica.",
-        price: "$3,500 MXN",
-        features: [
-          "Migración de contenido",
-          "Preservación de SEO",
-          "Configuración básica"
-        ]
-      },
-      {
-        name: "Completa",
-        description: "Migración completa con optimización y soporte.",
-        price: "$7,500 MXN",
-        features: [
-          "Migración completa",
-          "Optimización",
-          "Soporte post-migración"
-        ]
-      }
-    ],
-    features: [
-      { label: "Tipos de migración", value: "WordPress, WooCommerce, sitios estáticos" },
-      { label: "Preservación de datos", value: "Sí, garantizamos la integridad de tu información" },
-      { label: "Soporte post-migración", value: "1 mes incluido" },
-      { label: "Análisis de seguridad", value: "Incluido" }
-    ],
-    gallery: [
-      
-    ],
-    testimonials: [
-      { quote: "Recuperamos nuestro sitio web sin perder datos ni SEO.", author: "Dueño de sitio web" }
-    ],
-    faq: [
-      { question: "¿Puedo migrar mi sitio yo mismo?", answer: "Sí, pero recomendamos nuestro servicio para evitar pérdidas de datos o SEO." },
-      { question: "¿Incluye soporte técnico?", answer: "Sí, te ayudamos en cualquier problema técnico post-migración." }
-    ]
-  },
-  {
-    title: "Renta de equipo de cómputo",
-    slug: "renta-equipo-computo",
-    description: "Renta de laptops para eventos, oficinas temporales o necesidades puntuales. Equipos confiables y listos para usar.",
-    icon: "💻",
-    image: "/services/renta-laptops-min.jpg",
-    bullets: [
-      "Laptops listas para usar",
-      "Precios por día",
-      "Opciones para diferentes necesidades"
-    ],
-    price: "Desde $900 MXN por día",
-    plans: [
-      {
-        name: "Laptop dual core AMD",
-        description: "Equipo básico para tareas de oficina y navegación.",
-        price: "$900 MXN por día",
-        features: [
-          "Procesador dual core AMD",
-          "4GB RAM / 128GB SSD",
-          "Windows 10 o superior"
-        ]
-      },
-      {
-        name: "Laptop I5/R5",
-        description: "Equipo intermedio para productividad y multitarea.",
-        price: "$1,300 MXN por día",
-        features: [
-          "Intel Core i5 o Ryzen 5",
-          "8GB RAM / 256GB SSD",
-          "Windows 10/11"
-        ]
-      },
-      {
-        name: "Laptop de alto rendimiento i7+",
-        description: "Ideal para tareas exigentes, edición o desarrollo.",
-        price: "$2,000 MXN por día",
-        features: [
-          "Intel Core i7 o superior",
-          "16GB RAM / 512GB SSD",
-          "Gráficos dedicados (según modelo)"
-        ]
-      },
-      {
-        name: "Laptop Apple Macbook Pro i7",
-        description: "Potencia y diseño para usuarios Apple.",
-        price: "$2,500 MXN por día",
-        features: [
-          "Apple Macbook Pro i7",
-          "16GB RAM / 512GB SSD",
-          "macOS"
-        ]
-      }
-    ],
+    price: "Desde $2,000 MXN",
     features: [
       { label: "Entrega y recolección", value: "Incluidas en Los Cabos" },
-      { label: "Soporte técnico", value: "Durante el periodo de renta" },
-      { label: "Accesorios", value: "Cargador y funda incluidos" }
+      { label: "Soporte técnico", value: "Durante el evento" },
+      { label: "Opciones", value: "Audio, video, iluminación" }
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80",
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80"
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80",
+      "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=400&q=80"
     ],
     testimonials: [
-      { quote: "La laptop funcionó perfecto para nuestro evento.", author: "Organizador de evento" },
-      { quote: "Excelente servicio y equipos en buen estado.", author: "Cliente frecuente" }
+      { quote: "El equipo llegó puntual y todo funcionó perfecto.", author: "Coordinador de boda" }
     ],
     faq: [
-      { question: "¿Incluye software?", answer: "Incluye software básico (Office, navegador, antivirus)." },
-      { question: "¿Se requiere depósito?", answer: "Sí, se solicita un depósito reembolsable según el equipo." },
-      { question: "¿Puedo rentar por más de un día?", answer: "Sí, tenemos tarifas preferenciales por semana o mes." },
-      { question: "¿Cuáles son las formas de pago disponibles?", answer: "Aceptamos transferencia bancaria, tarjetas de crédito/débito y pagos en efectivo en Los Cabos." },
-      { question: "¿Puedo solicitar factura?", answer: "Sí, emitimos factura electrónica (CFDI) para todos nuestros servicios. Solicítala al momento de tu pago." },
-      { question: "¿Qué pasa si el equipo presenta fallas?", answer: "Reemplazamos el equipo sin costo extra durante el periodo de renta." },
-      { question: "¿Ofrecen entrega y recolección a domicilio?", answer: "Sí, el servicio incluye entrega y recolección en Los Cabos sin costo adicional." },
-      { question: "¿El equipo viene listo para usar?", answer: "Sí, entregamos los equipos configurados y con software básico listo para trabajar." },
-      { question: "¿Puedo rentar varios equipos a la vez?", answer: "Sí, puedes solicitar la cantidad que necesites, sujeto a disponibilidad." }
+      { question: "¿Incluye instalación?", answer: "Sí, nuestro equipo instala y prueba todo antes del evento." },
+      { question: "¿Qué marcas manejan?", answer: "Trabajamos con marcas reconocidas y equipos en excelente estado." }
+    ]
+  },
+  {
+    title: "Renta de Iluminación Decorativa",
+    slug: "renta-iluminacion-decorativa",
+    description: "Iluminación ambiental y decorativa para transformar cualquier espacio. Opciones: Bistro Lights, Fairy Lights, Luxury Drape Lights y LED Wash Light.",
+    icon: "💡",
+    image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=600&q=80",
+    bullets: [
+      "Bistro Lights para exteriores",
+      "Fairy Lights para ambientes mágicos",
+      "Luxury Drape Lights para eventos elegantes",
+      "LED Wash Light para resaltar espacios"
+    ],
+    price: "Desde $1,500 MXN",
+    features: [
+      { label: "Instalación", value: "Incluida" },
+      { label: "Opciones", value: "Bistro, Fairy, Drape, LED Wash" },
+      { label: "Consumo energético", value: "Bajo" }
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80",
+      "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=400&q=80"
+    ],
+    testimonials: [
+      { quote: "La iluminación transformó nuestro evento por completo.", author: "Cliente satisfecho" }
+    ],
+    faq: [
+      { question: "¿Se puede instalar en exteriores?", answer: "Sí, contamos con opciones para exteriores e interiores." },
+      { question: "¿Cuánto tiempo tarda la instalación?", answer: "Dependiendo de la cantidad, usualmente 1-2 horas." }
+    ]
+  },
+  {
+    title: "Cortinaje Blanco",
+    slug: "cortinaje-blanco",
+    description: "Cortinas blancas elegantes para dividir espacios, crear fondos o ambientar eventos.",
+    icon: "🕊️",
+    image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+    bullets: [
+      "Cortinas de tela blanca premium",
+      "Montaje profesional",
+      "Altura y largo personalizables"
+    ],
+    price: "Desde $2,500 MXN",
+    features: [
+      { label: "Material", value: "Tela blanca opaca" },
+      { label: "Altura", value: "Hasta 4 metros" },
+      { label: "Instalación", value: "Incluida" }
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+    ],
+    testimonials: [
+      { quote: "El cortinaje le dio un toque elegante a la boda.", author: "Novia" }
+    ],
+    faq: [
+      { question: "¿Se puede instalar en exteriores?", answer: "Sí, siempre que haya estructura para fijarlo." }
+    ]
+  },
+  {
+    title: "Letras Volumétricas",
+    slug: "letras-volumetricas",
+    description: "Letras gigantes iluminadas para personalizar eventos, bodas y celebraciones. Iniciales, nombres o palabras.",
+    icon: "🔠",
+    image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80",
+    bullets: [
+      "Letras de 1.2m de alto",
+      "Iluminación LED blanca o de color",
+      "Personalización de letras y símbolos"
+    ],
+    price: "Desde $1,800 MXN por letra",
+    features: [
+      { label: "Altura", value: "1.2 metros" },
+      { label: "Material", value: "Madera y acrílico" },
+      { label: "Iluminación", value: "LED" }
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
+    ],
+    testimonials: [
+      { quote: "¡Las letras fueron el centro de atención de la fiesta!", author: "Organizador de evento" }
+    ],
+    faq: [
+      { question: "¿Se pueden rentar solo algunas letras?", answer: "Sí, puedes elegir las que necesites." }
+    ]
+  },
+  {
+    title: "Chisperos Fríos",
+    slug: "chisperos-frios",
+    description: "Efectos de chisperos fríos para entradas, vals, shows y momentos especiales. Seguro para interiores y exteriores.",
+    icon: "✨",
+    image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=600&q=80",
+    bullets: [
+      "Efecto espectacular y seguro",
+      "Sin riesgo de quemaduras",
+      "Apto para interiores y exteriores"
+    ],
+    price: "Desde $3,000 MXN (2 chisperos)",
+    features: [
+      { label: "Duración", value: "Hasta 30 segundos por disparo" },
+      { label: "Cantidad", value: "Desde 2 hasta 8 chisperos" },
+      { label: "Operación", value: "Personal técnico incluido" }
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=400&q=80"
+    ],
+    testimonials: [
+      { quote: "¡El efecto fue increíble en nuestra entrada!", author: "Novios" }
+    ],
+    faq: [
+      { question: "¿Son seguros para interiores?", answer: "Sí, no generan calor ni humo." }
+    ]
+  },
+  {
+    title: "Pistas de Baile Personalizadas",
+    slug: "pistas-baile-personalizadas",
+    description: "Pistas de baile con acabados de lujo: charol, madera fina o tipo ajedrez. Personaliza tu evento con estilo.",
+    icon: "🕺",
+    image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=80",
+    bullets: [
+      "Cubierta de charol en color a elegir",
+      "Acabados en madera fina",
+      "Cubierta tipo ajedrez (blanco y negro)"
+    ],
+    price: "Desde $7,000 MXN",
+    features: [
+      { label: "Tamaños", value: "Desde 16m² hasta 64m²" },
+      { label: "Acabados", value: "Charol, madera, ajedrez" },
+      { label: "Instalación", value: "Incluida" }
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80"
+    ],
+    testimonials: [
+      { quote: "La pista lució espectacular en la boda.", author: "Novia" }
+    ],
+    faq: [
+      { question: "¿Se puede personalizar el color?", answer: "Sí, ofrecemos varios colores y acabados." }
+    ]
+  },
+  {
+    title: "Estrados Personalizados",
+    slug: "estrados-personalizados",
+    description: "Estrados y tarimas a la medida para escenarios, pasarelas, pistas y presentaciones. Seguridad y calidad garantizadas.",
+    icon: "🎤",
+    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80",
+    bullets: [
+      "Altura y tamaño personalizables",
+      "Montaje profesional",
+      "Estructura segura y resistente"
+    ],
+    price: "Desde $3,500 MXN",
+    features: [
+      { label: "Altura", value: "Desde 20cm hasta 1m" },
+      { label: "Capacidad", value: "Hasta 2 toneladas" },
+      { label: "Superficie", value: "Antiderrapante" }
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=400&q=80"
+    ],
+    testimonials: [
+      { quote: "El estrado fue perfecto para el show.", author: "Productor de evento" }
+    ],
+    faq: [
+      { question: "¿Pueden hacer estrados a la medida?", answer: "Sí, nos adaptamos a tus necesidades de tamaño y forma." }
     ]
   }
 ];
