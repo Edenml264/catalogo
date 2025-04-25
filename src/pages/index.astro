@@ -30,20 +30,20 @@ const faqItems = [
       html { font-family: 'Inter', sans-serif; }
     </style>
   </head>
-  <body class="bg-gradient-to-br from-white via-[#F8FCFF] to-[#00C1D5]/10 min-h-screen font-sans">
-    <header class="relative bg-gradient-to-r from-[#232B5D] to-[#00C1D5] text-white py-10 mb-12 shadow-lg animate-fade-in">
-      <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80" alt="Audiovisuales" class="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none rounded-b-3xl" loading="lazy" />
+  <body class="bg-gradient-to-br from-blue-50 via-white to-cyan-100 min-h-screen font-sans">
+    <header class="relative bg-gradient-to-r from-blue-700 to-cyan-600 text-white py-10 mb-12 shadow-lg animate-fade-in">
+      <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80" alt="Web Services" class="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none rounded-b-3xl" loading="lazy" />
       <div class="relative max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center px-4 z-10">
         <div class="flex items-center gap-4 w-full">
-          <img src="https://elegevents.com/wp-content/uploads/2021/12/ELEGEVENTS.webp" alt="Logo Elegevents" class="h-14 w-auto rounded-lg bg-white/80 shadow-md p-1" loading="lazy" />
-          <h1 class="text-3xl sm:text-4xl font-black drop-shadow-lg text-white tracking-tight animate-slide-in">Catálogo de Servicios Audiovisuales</h1>
+          <img src="/logo_sio.webp" alt="Logo Sionline" class="h-12 w-auto rounded-lg bg-white/80 shadow-md p-1" loading="lazy" />
+          <h1 class="text-3xl sm:text-4xl font-black drop-shadow-lg text-white tracking-tight animate-slide-in">Catálogo de Servicios Web</h1>
         </div>
-        <a href="https://wa.me/526241540044" target="_blank" class="mt-4 sm:mt-0 bg-[#00C1D5] px-6 py-3 rounded-full shadow-lg hover:bg-[#232B5D] transition-colors font-bold text-lg animate-pop">WhatsApp</a>
+        <a href="https://wa.me/526241665588" target="_blank" class="mt-4 sm:mt-0 bg-green-500 px-6 py-3 rounded-full shadow-lg hover:bg-green-600 transition-colors font-bold text-lg animate-pop">WhatsApp</a>
       </div>
     </header>
     <main class="max-w-5xl mx-auto px-4">
       <section>
-        <h2 class="text-2xl font-extrabold mb-8 text-center text-[#232B5D] animate-fade-in">Nuestros Servicios</h2>
+        <h2 class="text-2xl font-extrabold mb-8 text-center text-blue-800 animate-fade-in">Nuestros Servicios</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map(service => (
             <ServiceCard {...service} />
@@ -52,10 +52,10 @@ const faqItems = [
       </section>
       <FAQ items={faqItems} />
     </main>
-    <footer class="text-center bg-[#232B5D] text-white py-10 mt-12 text-base animate-fade-in rounded-t-3xl shadow-lg">
-      <span class="font-semibold">  {new Date().getFullYear()} Catálogo de Servicios Audiovisuales.</span> Todos los derechos reservados.
+    <footer class="text-center text-gray-500 py-10 mt-12 text-base animate-fade-in">
+      <span class="font-semibold">© {new Date().getFullYear()} Catálogo de Servicios Web.</span> Todos los derechos reservados.
     </footer>
-    <a href="mailto:info@elegevents.com,armando@elegevents.com" class="fixed bottom-6 right-6 bg-gradient-to-r from-[#232B5D] to-[#00C1D5] text-white px-6 py-3 rounded-full shadow-lg hover:from-[#00C1D5] hover:to-[#232B5D] transition-all font-bold animate-pop">Contáctanos</a>
+    <a href="mailto:emendez@sionline.com.mx" class="fixed bottom-6 right-6 bg-gradient-to-r from-blue-700 to-cyan-600 text-white px-6 py-3 rounded-full shadow-lg hover:from-cyan-700 hover:to-blue-900 transition-all font-bold animate-pop">Contáctanos</a>
     <style>
       @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
       .animate-fade-in { animation: fade-in 1.2s ease; }

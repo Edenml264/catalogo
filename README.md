@@ -1,20 +1,17 @@
-# Catálogo de Servicios Audiovisuales – Elegevents
+# Catálogo de Servicios Web - Proyecto Astro + Tailwind
 
-![Logo Elegevents](https://elegevents.com/wp-content/uploads/2021/12/ELEGEVENTS.webp)
+# Catálogo de Servicios Web - Los Cabos
 
-Catálogo web moderno y responsivo para mostrar los servicios audiovisuales de Elegevents, incluyendo renta de equipo, DJ, iluminación, pistas, letras volumétricas, y más. Permite a los clientes conocer detalles, ver galerías, cotizar y contactar fácilmente.
+Este proyecto es un catálogo digital de servicios web pensado para apoyar a vendedores y mostrar de manera clara y profesional las soluciones que ofrezco como desarrollador web especializado en WordPress y frameworks modernos. Optimizado para el mercado local de Los Cabos, BCS, México, con precios en pesos mexicanos (MXN).
 
-Repositorio oficial: [github.com/Edenml264/catalogo-av](https://github.com/Edenml264/catalogo-av)
-
----
-
-## Características principales
-- **Diseño personalizado** con branding de Elegevents
-- **Servicios y precios** gestionados desde un solo archivo (`services.ts`)
-- **Galería de imágenes** y testimonios para cada servicio
-- **Cotizador integrado** con precios en MXN
-- **FAQ y contacto directo** por WhatsApp y correo
-- **100% responsive** y optimizado para SEO
+## Servicios incluidos
+- Sitio Web WordPress Profesional
+- Tienda en línea (WooCommerce)
+- Landing Page de Alto Impacto
+- Mantenimiento y Soporte Web
+- Desarrollo a Medida (WordPress, Astro, Svelte, Vue, Laravel)
+- Optimización SEO y Velocidad
+- Migraciones y Rescate Web
 
 ## Estructura del proyecto
 - **Landing page**: Presentación y acceso al catálogo
@@ -24,47 +21,13 @@ Repositorio oficial: [github.com/Edenml264/catalogo-av](https://github.com/Edenm
 - **Contacto rápido**: WhatsApp, email, formulario
 - **FAQ**: Preguntas frecuentes
 
-## Tecnologías
-- [Astro](https://astro.build/) (framework principal)
-- TypeScript
-- TailwindCSS (opcional para estilos)
-- Despliegue recomendado: Vercel, Netlify, o cualquier hosting estático
+## Tecnologías utilizadas
+- **Framework**: Astro
+- **Estilos**: Tailwind CSS
+- **Lenguaje**: TypeScript
+- **Hosting**: Netlify
 
-## ¿Cómo correr el proyecto localmente?
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/Edenml264/catalogo-av.git
-   cd catalogo-av
-   ```
-2. Instala dependencias:
-   ```bash
-   npm install
-   ```
-3. Ejecuta en modo desarrollo:
-   ```bash
-   npm run dev
-   ```
-4. Abre [http://localhost:4321](http://localhost:4321) en tu navegador.
-
-## Despliegue
-Puedes desplegar fácilmente en Vercel, Netlify o tu servidor favorito. Solo asegúrate de construir el sitio con:
-```bash
-npm run build
-```
-Y sube la carpeta `dist` generada.
-
-## Contacto
-- **Teléfono:** (624) 154 0044
-- **Correo:** info@elegevents.com / armando@elegevents.com
-- **Sitio web:** [elegevents.com](https://elegevents.com)
-
-## Agradecimientos
-Desarrollado para Elegevents con ❤️. Si tienes sugerencias o encuentras algún error, ¡no dudes en abrir un issue o contactarnos!
-
----
-
-© 2025 Elegevents. Todos los derechos reservados.
-
+## Características implementadas
 
 ### Catálogo de servicios
 - Estructura de datos centralizada en `services.ts`. Todos los servicios, subservicios y planes se gestionan desde un solo archivo para máxima consistencia.
@@ -148,10 +111,10 @@ npm run build
 
 ## Estado del proyecto
 - El catálogo está completamente funcional y desplegado en producción.
-- URL de producción: https://elegevents-catalogo-eml.netlify.app/
+- URL de producción: https://sionline-catalogo-eml.netlify.app/
 
 Puedes acceder al catálogo en línea desde el siguiente enlace:
-👉 [Catálogo de Servicios Audiovisuales en producción](https://elegevents-catalogo-eml.netlify.app/)
+👉 [Catálogo de Servicios Web en producción](https://sionline-catalogo-eml.netlify.app/)
 
 ---
 
@@ -177,7 +140,7 @@ Facilitar a los vendedores una herramienta visual y práctica para explicar y co
 
 ## Deploy
 Este proyecto está actualmente desplegado en Netlify:
-- URL: https://elegevents-catalogo-eml.netlify.app/
+- URL: https://sionline-catalogo-eml.netlify.app/
 
 Cualquier cambio en la rama principal puede ser reflejado en producción manualmente desde el panel de Netlify.
 
