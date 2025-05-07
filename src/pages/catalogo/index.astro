@@ -1,0 +1,58 @@
+---
+import ServiceCard from '../../components/ServiceCard.astro';
+import { services } from '../../data/services';
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Catálogo de Servicios Web</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
+    <meta name="description" content="Catálogo de servicios web de muestra. Consulta los servicios disponibles sin precios ni contacto directo." />
+    <style>
+      html { font-family: 'Inter', sans-serif; }
+    </style>
+  </head>
+  <body class="bg-gradient-to-br from-blue-50 via-white to-cyan-100 min-h-screen font-sans">
+    <header class="relative bg-gradient-to-r from-blue-700 to-cyan-600 text-white py-10 mb-12 shadow-lg animate-fade-in">
+      <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80" alt="Web Services" class="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none rounded-b-3xl" loading="lazy" />
+      <div class="relative max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center px-4 z-10">
+        <div class="flex items-center gap-4 w-full">
+          <img src="/logo_sio.webp" alt="Logo Sionline" class="h-12 w-auto rounded-lg bg-white/80 shadow-md p-1" loading="lazy" />
+          <h1 class="text-3xl sm:text-4xl font-black drop-shadow-lg text-white tracking-tight animate-slide-in">Catálogo de Servicios Web</h1>
+        </div>
+      </div>
+    </header>
+    <main class="max-w-5xl mx-auto px-4">
+      <section>
+        <h2 class="text-2xl font-extrabold mb-8 text-center text-blue-800 animate-fade-in">Nuestros Servicios</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map(service => (
+            <ServiceCard
+              title={service.title}
+              description={service.description}
+              icon={service.icon}
+              bullets={service.bullets}
+              slug={`catalogo/${service.slug}`}
+              price={service.price}
+              plans={service.plans}
+              showPrice={false}
+              showContact={false}
+            />
+          ))}
+        </div>
+      </section>
+    </main>
+    <footer class="text-center text-gray-500 py-10 mt-12 text-base animate-fade-in">
+      <span class="font-semibold">© {new Date().getFullYear()} Catálogo de Servicios Web.</span> Todos los derechos reservados.
+    </footer>
+    <style>
+      @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+      .animate-fade-in { animation: fade-in 1.2s ease; }
+      @keyframes slide-in { from { transform: translateY(-20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+      .animate-slide-in { animation: slide-in 1s cubic-bezier(.4,2,.6,1) 0.2s both; }
+    </style>
+  </body>
+</html>

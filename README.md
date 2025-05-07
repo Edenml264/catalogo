@@ -31,6 +31,40 @@ Este proyecto es un catálogo digital de servicios web pensado para apoyar a ven
 
 ### Catálogo de servicios
 - Estructura de datos centralizada en `services.ts`. Todos los servicios, subservicios y planes se gestionan desde un solo archivo para máxima consistencia.
+
+---
+
+## 🆕 Catálogo Demo en `/catalogo`
+
+Ahora el proyecto incluye una ruta `/catalogo` que funciona como **versión demo/muestra** del catálogo de servicios. Esta sección está pensada para mostrar a clientes o como portafolio público, sin exponer precios ni contacto directo del desarrollador.
+
+**Características de la demo:**
+- Diseño y experiencia idénticos al catálogo original.
+- No se muestran precios ni datos de contacto.
+- Los planes/paquetes de cada servicio se visualizan (nombre, descripción, características), pero sin precio.
+- Navegación y visualización responsiva optimizada para móvil y escritorio.
+
+**Estructura:**
+- `/src/pages/catalogo/index.astro`: Lista todos los servicios como tarjetas.
+- `/src/pages/catalogo/[slug].astro`: Página de detalle de cada servicio, sin precios ni contacto.
+- Utiliza los mismos componentes y datos que la versión principal, asegurando sincronización y fácil mantenimiento.
+
+**¿Cómo mantener sincronizadas ambas versiones?**
+- Todos los servicios, planes y características se gestionan desde `src/data/services.ts`.
+- Si se actualiza un servicio, el cambio se refleja automáticamente tanto en el catálogo completo como en la demo.
+
+**¿Cómo contribuir y subir cambios al repositorio?**
+1. Realiza tus cambios y mejoras localmente.
+2. Asegúrate de probar tanto la ruta principal como `/catalogo`.
+3. Haz commit de los cambios:
+   ```bash
+   git add .
+   git commit -m "feat: agregar versión demo /catalogo sin precios ni contacto"
+   git push
+   ```
+4. Abre un Pull Request si es necesario, o sube directamente a la rama principal según tu flujo de trabajo.
+
+---
 - Precios y lógica adaptados al mercado local de Los Cabos, BCS, México (MXN, sin conversión a dólares).
 - Páginas dinámicas generadas a partir de los datos del catálogo.
 - Diseño responsivo adaptado a todos los dispositivos.
