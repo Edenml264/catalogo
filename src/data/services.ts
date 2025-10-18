@@ -20,6 +20,56 @@ export interface Service {
 
 export const services: Service[] = [
   {
+    title: "Paquete CABOCON",
+    slug: "paquete-cabocon",
+    description: "Tu Obra Maestra Digital: Portafolio Web profesional con funciones de Amateur a PRO.",
+    icon: "🔥",
+    image: "/services/cabocon-special-min.jpg",
+    bullets: [
+        "Diseño temático",
+        "Galería de Alta Resolución",
+        "Formulario de Contacto o Botón de whatsapp",
+        "Optimización de Carga (para que tu arte se vea rápido)"
+    ],
+    price: "¡Precio Único de Evento!",
+    plans: [
+        {
+            name: "Paquete Único CABOCON",
+            description: "Portafolio Web (Hasta 6 Secciones).",
+            price: "$1,999 MXN", // Precio estratégico, ligeramente más alto que el Básico ($6,500) pero con mucho más valor.
+            features: [
+                "Sitio Web estatico (HTML5, CSS3, JS)",
+                "Diseño temático",
+                "Galería PRO para mostrar el Proceso de Creación (Blueprint -> Final)",
+                "Formulario de Contacto",
+                "¡2 Meses de Soporte GRATIS!"
+            ]
+        }
+    ],
+    features: [
+        { label: "Tecnologías", value: "HTML5, CSS3, JS" },
+        { label: "Tiempo de entrega", value: "1 semana garantizada" },
+        { label: "Soporte Promoción", value: "2 meses incluido (Valorado en $1,500 MXN)" },
+        { label: "Valor de Mercado", value: "Más de $6,500 MXN" },
+        { label: "Vigencia", value: "¡Solo disponible durante el evento CABOCON!" }
+    ],
+    gallery: [
+        "/projects/cosplay-portafolio-mockup.png", 
+        "/projects/tienda-otaku-mockup.png", 
+        "/projects/wordpress/cabocon-min.png"
+    ],
+    testimonials: [
+        { quote: "Mi portafolio parece sacado de un videojuego. ¡Las comisiones se duplicaron!", author: "Cosplayer PRO (Ficticio)" },
+        { quote: "El soporte es rápido y ahora puedo gestionar mi inventario sin un developer.", author: "Tienda de Props (Ficticio)" }
+    ],
+    faq: [
+        { question: "¿Cuál es el descuento real?", answer: "Es un paquete especial con características de nuestro Plan Pro, pero al precio de una web básica. ¡Ahorras más de $4,000 MXN!" },
+        { question: "¿Incluye dominio y hosting?", answer: "No, pero si lo contratas hoy te **regalamos el primer mes** de Hosting (Valor $250 MXN) con nuestro proveedor recomendado." },
+        { question: "¿Cuál es el tiempo de entrega?", answer: "Garantizamos la entrega en un plazo de 1 semana, siempre y cuando tengamos tu contenido (fotos, textos) a tiempo." },
+        { question: "¿Puedo asegurar el precio con un apartado?", answer: "¡Sí! Puedes asegurar esta promoción con un **apartado de $500 MXN** en nuestro stand y tienes 7 días para formalizar el contrato." }
+    ]
+  },
+  {
     title: "Sitio Web WordPress Profesional",
     slug: "wordpress-profesional",
     description: "Desarrollo de sitios web modernos, seguros y autoadministrables.",

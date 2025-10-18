@@ -12,7 +12,7 @@
         body { font-family: 'Inter', sans-serif; background: #f9f9f9; margin: 0; padding: 0; color: #333;}
         .cotizacion-container { max-width: 700px; margin: 30px auto; background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 30px; }
         h2 { text-align: center; color: #2563eb; }
-        .datos-cliente, .datos-vendedor, .datos-empresa { margin-bottom: 30px; }
+        .datos-cliente, .datos-vendedor, .datos-empresa { margin-bottom: 1.25rem; }
         .datos-cliente h3, .datos-vendedor h3, .datos-empresa h3 { color: #333; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 15px; }
         .datos-cliente p, .datos-vendedor p, .datos-empresa p { margin: 4px 0; }
         table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
@@ -24,7 +24,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 35px;
+            margin-bottom: 1.5rem;
         }
         .logo-empresa {
             flex: 0 0 auto;
@@ -56,6 +56,7 @@
         .datos-vendedor { 
             text-align: right;
         }
+        
         @media (max-width: 600px) {
             .cabecera-cotizacion {
                 flex-direction: column;
@@ -74,6 +75,39 @@
                 text-align: left;
             }
         }
+        @media print {
+            /* 1. Selecciona el contenedor principal */
+            .flex {
+                /* Fuerza a que el diseño en impresión sea 'flex' para colocar los hijos lado a lado */
+                display: flex !important; 
+                
+                /* Asegura que los hijos se alineen en una fila */
+                flex-direction: row !important; 
+                
+                /* Distribuye el espacio entre las columnas para que quepan en la página */
+                width: 100%;
+                gap: 20px; /* Espacio entre las columnas */
+            }
+            
+            /* 2. Aplica un ancho equitativo a cada columna (50% del total) */
+            .datos-cliente,
+            .datos-vendedor {
+                /* 'flex-basis' y 'width' para asegurar que cada uno ocupe la mitad */
+                flex-basis: 50% !important; 
+                width: 50% !important;
+                
+                /* Asegura que no haya saltos forzados de página dentro de los bloques */
+                break-inside: avoid;
+            }
+            
+            /* Opcional: Eliminar cualquier 'gap' que aplique Tailwind en pantallas */
+            .gap-4 {
+                gap: 0 !important;
+            }
+            .print-buttons {
+                display: none;
+            }
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
 </head>
@@ -87,24 +121,25 @@
                 <h2>Estimación de servicios</h2>
             </div>
             <div class="info-empresa">
+                <p><strong>Cotización:</strong> <span id="numeroCotizacion"></span></p>
                 <p>ventas@sionline.com.mx</p>
-                <p>624-166-5588</p>
-                <p>Country del Mar, San Jose del Cabo, <br> Baja California Sur, México</p>
+                <p>624-217-1765</p>
+                <p>San Jose del Cabo, BCS, México</p>
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+        <div class="flex flex-col md:flex-row gap-4 mb-5 justify-between">
             <div class="datos-cliente">
                 <h3>Datos del Cliente</h3>
                 <p><strong>Nombre:</strong> <span id="nombreCliente"></span></p>
-                <p><strong>Correo electrónico:</strong> <span id="correoCliente"></span></p>
+                <p><strong>Correo electrónico:</strong> <br><span id="correoCliente"></span></p>
                 <p><strong>Teléfono:</strong> <span id="telefonoCliente"></span></p>
                 <p><strong>Fecha:</strong> <span id="fechaCotizacion"></span></p>
             </div>
             <div class="datos-vendedor">
                 <h3>Datos del Vendedor</h3>
                 <p><strong>Nombre:</strong> <span id="nombreVendedor"></span></p>
-                <p><strong>Correo electrónico:</strong> <span id="correoVendedor"></span></p>
+                <p><strong>Correo electrónico:</strong> <br><span id="correoVendedor"></span></p>
                 <p><strong>Teléfono:</strong> <span id="telefonoVendedor"></span></p>
             </div>
         </div>
@@ -124,9 +159,11 @@
         <div class="total">
             Total estimado: <span id="totalCotizacion"></span>
         </div>
-        <div style="text-align:right; margin-top:20px; margin-bottom:20px;">
-            <button onclick="window.print()" class="btn-imprimir">Imprimir</button>
+        <div class="print-buttons" style="text-align:right; margin-top:20px; margin-bottom:20px;">
+            <button id="btnCapturar" class="btn-imprimir">Capturar Pantalla</button>
+            <button onclick="window.print()" class="btn-imprimir ml-2">Imprimir</button>
         </div>
+        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
         <div class="footer">
             <p>Gracias por confiar en nuestros servicios. La cotización es válida por 15 días y no incluye impuestos.<br>Términos y Condiciones: <br> 
                 El proyecto comienza con un anticipo del 70% y el saldo se paga antes de la entrega final. Los tiempos de entrega dependen de la entrega puntual de materiales por parte del cliente. Se incluyen dos rondas de revisiones; adicionales se facturarán por separado. El cliente es responsable de cubrir los costos de licencias de terceros. 
@@ -136,8 +173,19 @@
         </div>
     </div>
     <script type="module">
+    // Función para generar un número de cotización aleatorio
+    function generarNumeroCotizacion() {
+        const ahora = new Date();
+        const año = ahora.getFullYear();
+        const numero = Math.floor(10000 + Math.random() * 90000); // Número de 5 dígitos
+        return `COT-${año}-${numero}`;
+    }
+
     // Obtener datos de localStorage
     document.addEventListener('DOMContentLoaded', function() {
+        // Establecer número de cotización
+        const numeroCotizacion = generarNumeroCotizacion();
+        document.getElementById('numeroCotizacion').textContent = numeroCotizacion;
         const datosCotizacionStr = localStorage.getItem('datosCotizacion');
         if (datosCotizacionStr) {
             try {
@@ -156,6 +204,10 @@
                 actualizarElemento('correoCliente', datos.correo);
                 actualizarElemento('telefonoCliente', datos.telefono);
                 actualizarElemento('fechaCotizacion', new Date().toLocaleDateString('es-MX'));
+                
+                // Actualizar datos de cotización en el objeto para el correo
+                datos.numeroCotizacion = document.getElementById('numeroCotizacion').textContent;
+                
                 // Llenar datos del vendedor si existen
                 if (datos.vendedor) {
                     actualizarElemento('nombreVendedor', datos.vendedor.name || '');
@@ -254,6 +306,63 @@
             document.body.innerHTML = '<div style="text-align:center; padding:50px;"><h2>No hay datos de cotización disponibles</h2><p>Por favor, regrese al formulario de cotización para generar una nueva.</p><p><a href="/cotizador" style="color:#2563eb;">Volver al cotizador</a></p></div>';
         }
     });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnCapturar = document.getElementById('btnCapturar');
+            
+            btnCapturar.addEventListener('click', async () => {
+                try {
+                    // Mostrar mensaje de carga
+                    const originalText = btnCapturar.textContent;
+                    btnCapturar.textContent = 'Capturando...';
+                    btnCapturar.disabled = true;
+                    
+                    // Capturar el contenedor de la cotización
+                    const element = document.querySelector('.cotizacion-container');
+                    
+                    // Usar html2canvas para capturar el elemento
+                    const canvas = await html2canvas(element, {
+                        scale: 2, // Mejor calidad
+                        useCORS: true,
+                        logging: false,
+                        backgroundColor: '#ffffff'
+                    });
+                    
+                    // Convertir el canvas a blob
+                    canvas.toBlob(async (blob) => {
+                        try {
+                            // Copiar al portapapeles
+                            await navigator.clipboard.write([
+                                new ClipboardItem({
+                                    [blob.type]: blob
+                                })
+                            ]);
+                            
+                            // Mostrar mensaje de éxito
+                            alert('¡Captura de pantalla copiada al portapapeles!');
+                        } catch (err) {
+                            console.error('Error al copiar al portapapeles:', err);
+                            // Alternativa: descargar la imagen
+                            const link = document.createElement('a');
+                            link.download = 'cotizacion.png';
+                            link.href = canvas.toDataURL('image/png');
+                            link.click();
+                        }
+                        
+                        // Restaurar el botón
+                        btnCapturar.textContent = originalText;
+                        btnCapturar.disabled = false;
+                    }, 'image/png');
+                    
+                } catch (error) {
+                    console.error('Error al capturar la pantalla:', error);
+                    alert('Error al capturar la pantalla. Por favor, inténtalo de nuevo.');
+                    btnCapturar.textContent = 'Capturar Pantalla';
+                    btnCapturar.disabled = false;
+                }
+            });
+        });
     </script>
 </body>
 </html>

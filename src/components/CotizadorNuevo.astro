@@ -437,9 +437,17 @@ const selectedServiceData = services.find(s => s.title === selectedService);
     // Mostrar mensaje de éxito
     formSuccess.classList.remove('hidden');
     formError.classList.add('hidden');
-
+    
     // Resetear el formulario después de un tiempo
-    resetearFormulario();
+    setTimeout(() => {
+      cotizadorForm.reset();
+      formSuccess.classList.add('hidden');
+      planesContainer.classList.add('hidden');
+      planFeatures.classList.add('hidden');
+      precioBase.textContent = '$0 MXN';
+      precioAdicionales.textContent = '$0 MXN';
+      totalElement.textContent = '$0 MXN';
+    }, 3000);
   });
   
   // Función para enviar correo al administrador

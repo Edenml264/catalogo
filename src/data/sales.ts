@@ -6,6 +6,16 @@ export interface SalesAgent {
 
 export const salesAgents: SalesAgent[] = [
   {
+    name: "Mario Castro",
+    email: "ventas@sionline.com.mx",
+    phone: "624-137-7094"
+  },
+  {
+    name: "Marco Heredia",
+    email: "ventas@sionline.com.mx",
+    phone: "624-147-3891"
+  },
+  {
     name: "Faby Saenz",
     email: "fsaenz@sionline.com.mx",
     phone: "624-123-4567"
