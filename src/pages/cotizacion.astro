@@ -160,10 +160,8 @@
             Total estimado: <span id="totalCotizacion"></span>
         </div>
         <div class="print-buttons" style="text-align:right; margin-top:20px; margin-bottom:20px;">
-            <button id="btnCapturar" class="btn-imprimir">Capturar Pantalla</button>
-            <button onclick="window.print()" class="btn-imprimir ml-2">Imprimir</button>
+            <button onclick="window.print()" class="btn-imprimir">Imprimir</button>
         </div>
-        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
         <div class="footer">
             <p>Gracias por confiar en nuestros servicios. La cotización es válida por 15 días y no incluye impuestos.<br>Términos y Condiciones: <br> 
                 El proyecto comienza con un anticipo del 70% y el saldo se paga antes de la entrega final. Los tiempos de entrega dependen de la entrega puntual de materiales por parte del cliente. Se incluyen dos rondas de revisiones; adicionales se facturarán por separado. El cliente es responsable de cubrir los costos de licencias de terceros. 
@@ -306,63 +304,6 @@
             document.body.innerHTML = '<div style="text-align:center; padding:50px;"><h2>No hay datos de cotización disponibles</h2><p>Por favor, regrese al formulario de cotización para generar una nueva.</p><p><a href="/cotizador" style="color:#2563eb;">Volver al cotizador</a></p></div>';
         }
     });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const btnCapturar = document.getElementById('btnCapturar');
-            
-            btnCapturar.addEventListener('click', async () => {
-                try {
-                    // Mostrar mensaje de carga
-                    const originalText = btnCapturar.textContent;
-                    btnCapturar.textContent = 'Capturando...';
-                    btnCapturar.disabled = true;
-                    
-                    // Capturar el contenedor de la cotización
-                    const element = document.querySelector('.cotizacion-container');
-                    
-                    // Usar html2canvas para capturar el elemento
-                    const canvas = await html2canvas(element, {
-                        scale: 2, // Mejor calidad
-                        useCORS: true,
-                        logging: false,
-                        backgroundColor: '#ffffff'
-                    });
-                    
-                    // Convertir el canvas a blob
-                    canvas.toBlob(async (blob) => {
-                        try {
-                            // Copiar al portapapeles
-                            await navigator.clipboard.write([
-                                new ClipboardItem({
-                                    [blob.type]: blob
-                                })
-                            ]);
-                            
-                            // Mostrar mensaje de éxito
-                            alert('¡Captura de pantalla copiada al portapapeles!');
-                        } catch (err) {
-                            console.error('Error al copiar al portapapeles:', err);
-                            // Alternativa: descargar la imagen
-                            const link = document.createElement('a');
-                            link.download = 'cotizacion.png';
-                            link.href = canvas.toDataURL('image/png');
-                            link.click();
-                        }
-                        
-                        // Restaurar el botón
-                        btnCapturar.textContent = originalText;
-                        btnCapturar.disabled = false;
-                    }, 'image/png');
-                    
-                } catch (error) {
-                    console.error('Error al capturar la pantalla:', error);
-                    alert('Error al capturar la pantalla. Por favor, inténtalo de nuevo.');
-                    btnCapturar.textContent = 'Capturar Pantalla';
-                    btnCapturar.disabled = false;
-                }
-            });
-        });
     </script>
 </body>
 </html>
