@@ -38,7 +38,7 @@ export const services: Service[] = [
       {
         name: "Paquete Único CABOCON (Reserva HOY)",
         description: "Consigue tu **Portafolio Web Estático de Alto Impacto** con funcionalidades de artista PRO. Ideal para mostrar tu trabajo, comisiones y streams.",
-        price: "Pago de Reserva: $300 MXN",
+        price: "$1,999 MXN",
         features: [
           "Aplica para el precio final de $1,999 MXN. Los $300 MXN se descuentan del total.",
           "Plataforma Estática de Alto Rendimiento (HTML5/CSS/JS puro)",
