@@ -15,101 +15,199 @@ export interface Service {
     description?: string;
     price: string;
     features?: string[];
+    specialnote?: string;
   }[];
 }
 
 export const services: Service[] = [
   {
-    title: "Paquete CABOCON",
+    title: "Paquete CABOCON: Portafolio de Artista PRO",
     slug: "paquete-cabocon",
-    description: "Tu Obra Maestra Digital: Portafolio Web profesional con funciones de Amateur a PRO.",
+    description: "Tu **Obra Maestra Digital** en la web. Un portafolio profesional, rápido y temático, exclusivo para asistentes al CaboCON. **¡Solo disponible el 08 de noviembre!**",
     icon: "🔥",
     image: "/services/cabocon-special-min.jpg",
     bullets: [
-        "Diseño temático",
-        "Galería de Alta Resolución",
-        "Formulario de Contacto o Botón de whatsapp",
-        "Optimización de Carga (para que tu arte se vea rápido)"
+      "Diseño con la temática de tu arte (Temático y Personalizado)",
+      "Galería de Alta Resolución (Muestra cada detalle de tu trabajo)",
+      "Canal de Comunicación Directo (Contacto o WhatsApp)",
+      "Carga Ultra-Rápida (Tu arte se ve al instante)",
+      "¡Garantiza tu precio con solo $300 MXN!"
     ],
-    price: "¡Precio Único de Evento!",
+    price: "¡Precio Único de Evento: $1,999 MXN!",
     plans: [
-        {
-            name: "Paquete Único CABOCON",
-            description: "Portafolio Web (Hasta 6 Secciones).",
-            price: "$1,999 MXN", // Precio estratégico, ligeramente más alto que el Básico ($6,500) pero con mucho más valor.
-            features: [
-                "Sitio Web estatico (HTML5, CSS3, JS)",
-                "Diseño temático",
-                "Galería PRO para mostrar el Proceso de Creación (Blueprint -> Final)",
-                "Formulario de Contacto",
-                "¡2 Meses de Soporte GRATIS!"
-            ]
-        }
+      {
+        name: "Paquete Único CABOCON (Reserva HOY)",
+        description: "Consigue tu **Portafolio Web Estático de Alto Impacto** con funcionalidades de artista PRO. Ideal para mostrar tu trabajo, comisiones y streams.",
+        price: "Pago de Reserva: $300 MXN",
+        features: [
+          "Aplica para el precio final de $1,999 MXN. Los $300 MXN se descuentan del total.",
+          "Plataforma Estática de Alto Rendimiento (HTML5/CSS/JS puro)",
+          "Hasta 6 Secciones Clave (Hero, Galería, Servicios/Comisiones, Contacto, etc.)",
+          "Diseño Temático alineado a tu estilo de arte o género favorito",
+          "Galería PRO con Proceso de Creación (Muestra 'Blueprint' y pieza final)",
+          "Integración con Twitch/YouTube (Muestra tu stream o videos recientes)",
+          "Formulario de Contacto o Botón de WhatsApp directo",
+          "Optimización SEO Básica para que te encuentren",
+          "¡1 Mes de Soporte Técnico GRATIS!"
+        ]
+      }
     ],
     features: [
-        { label: "Tecnologías", value: "HTML5, CSS3, JS" },
-        { label: "Tiempo de entrega", value: "1 semana garantizada" },
-        { label: "Soporte Promoción", value: "2 meses incluido (Valorado en $1,500 MXN)" },
-        { label: "Valor de Mercado", value: "Más de $6,500 MXN" },
-        { label: "Vigencia", value: "¡Solo disponible durante el evento CABOCON!" }
+      { label: "Tecnología de Vanguardia", value: "**Sitio Estático** (HTML5, CSS3, JS) – Máxima Velocidad y Seguridad" },
+      { label: "Tiempo de Lanzamiento", value: "**1 Semana Garantizada** (Post-entrega de contenido)" },
+      { label: "Soporte Post-Lanzamiento", value: "**¡2 Meses GRATIS!** (Valorado en $2,000 MXN) – Duplica tu garantía estándar" },
+      { label: "Ahorro Real", value: "Obtienes un paquete valorado en más de **$4,500 MXN** a un precio exclusivo de **$1,999 MXN**." },
+      { label: "Vigencia", value: "**¡Promoción que termina el 08 de noviembre!** Asegura tu lugar con el apartado." }
     ],
     gallery: [
-        "/projects/cosplay-portafolio-mockup.png", 
-        "/projects/tienda-otaku-mockup.png", 
-        "/projects/wordpress/cabocon-min.png"
+      "/projects/cosplay-portafolio-mockup.png",
+      "/projects/tienda-otaku-mockup.png",
+      "/projects/wordpress/cabocon-min.png"
     ],
     testimonials: [
-        { quote: "Mi portafolio parece sacado de un videojuego. ¡Las comisiones se duplicaron!", author: "Cosplayer PRO (Ficticio)" },
-        { quote: "El soporte es rápido y ahora puedo gestionar mi inventario sin un developer.", author: "Tienda de Props (Ficticio)" }
+      { quote: "Mi portafolio temático parece sacado de un videojuego. La funcionalidad de comisiones está impecable y **mis peticiones se duplicaron**.", author: "Cosplayer PRO (Nombre Ficticio Relevante)" },
+      { quote: "Antes perdía el tiempo con mi viejo sitio. Ahora tengo una plataforma rápida que me permite gestionar mi inventario de props sin necesitar un developer.", author: "Propietario de Tienda de Props (Nombre Ficticio)" }
     ],
     faq: [
-        { question: "¿Cuál es el descuento real?", answer: "Es un paquete especial con características de nuestro Plan Pro, pero al precio de una web básica. ¡Ahorras más de $4,000 MXN!" },
-        { question: "¿Incluye dominio y hosting?", answer: "No, pero si lo contratas hoy te **regalamos el primer mes** de Hosting (Valor $250 MXN) con nuestro proveedor recomendado." },
-        { question: "¿Cuál es el tiempo de entrega?", answer: "Garantizamos la entrega en un plazo de 1 semana, siempre y cuando tengamos tu contenido (fotos, textos) a tiempo." },
-        { question: "¿Puedo asegurar el precio con un apartado?", answer: "¡Sí! Puedes asegurar esta promoción con un **apartado de $500 MXN** en nuestro stand y tienes 7 días para formalizar el contrato." }
+      { question: "¿Cuál es el ahorro real que obtengo con este paquete?", answer: "Este paquete incluye funcionalidades de nuestro Plan Avanzado (galería PRO, SEO, diseño temático) que tiene un valor de mercado de más de $4,500 MXN. Estás obteniendo una **inversión con un 55% de descuento**." },
+      { question: "¿Incluye Dominio y Hosting (el costo anual de la web)?", answer: "No los incluye, pero como bono exclusivo, si lo contratas hoy te **REGALAMOS el primer mes** de Hosting de Alta Velocidad (Valor $250 MXN) con nuestro proveedor recomendado." },
+      { question: "¿Qué tan rápido estará mi portafolio en línea?", answer: "**Garantizamos el lanzamiento en 7 días**, siempre y cuando nos entregues todo tu contenido (fotos, textos, logos) a tiempo para que podamos trabajar." },
+      { question: "¿Puedo asegurar el precio si lo pienso en casa?", answer: "¡No! La promoción termina con el evento. Puedes **asegurar esta tarifa con el apartado de $300 MXN** en nuestro stand y tienes 7 días naturales para completar el pago restante." }]
+  },
+  {
+    title: "Paquete Rescate PRO (Oferta Post-CaboCON)",
+    slug: "paquete-rescate-pro",
+    description: "Tu última oportunidad para obtener el **Portafolio de Artista PRO**. Promoción extendida por **7 DÍAS NATURALES** después del evento para quienes no pudieron aprovechar la tarifa de urgencia. ¡El ahorro aún es significativo!",
+    icon: "🗓️",
+    image: "/services/cabocon-special-min.jpg",
+    bullets: [
+      "Diseño Temático (Mismo estilo que el paquete CABOCON)",
+      "Galería PRO con Proceso de Creación",
+      "Integración con Twitch/YouTube",
+      "Lanzamiento Garantizado en 1 Semana (Post-entrega de contenido)",
+      "¡Vigencia Extendida: 7 Días Naturales!"
+    ],
+    price: "Precio Único de Rescate: $2,499 MXN",
+    plans: [
+      {
+        name: "Rescate PRO (Última Oportunidad)",
+        description: "Misma estructura de Portafolio Web Estático de Alto Impacto. Ideal para quienes necesitan tiempo extra para decidir. La tarifa sube $500 MXN respecto al precio del evento.",
+        price: "$2,499 MXN",
+        specialnote: "Esta tarifa estará vigente por 7 días naturales tras la finalización del evento CaboCON. Se requiere el pago total para confirmar el proyecto.",
+        features: [
+          "Plataforma Estática de Alto Rendimiento (HTML5/CSS/JS)",
+          "Hasta 6 Secciones Clave de tu portafolio",
+          "Diseño Temático y Personalizado",
+          "Galería PRO para mostrar el 'Behind The Scenes'",
+          "Integración de Stream (Twitch/YouTube)",
+          "Formulario de Contacto y WhatsApp Directo",
+          "Optimización SEO Básica",
+          "1 Mes de Soporte Técnico GRATIS"
+        ]
+      }
+    ],
+    features: [
+      { label: "Tecnología", value: "Sitio Estático para Máxima Velocidad y Seguridad" },
+      { label: "Tiempo de Lanzamiento", value: "1 Semana Garantizada" },
+      { label: "Ahorro Post-Evento", value: "Obtienes un paquete valorado en más de $4,500 MXN con un 45% de descuento." },
+      { label: "Vigencia", value: "¡7 Días Naturales Disponibles! Válido solo con pago total durante este plazo." }
+    ],
+    faq: [
+      { question: "¿Por qué el precio es diferente al del evento?", answer: "El precio de $1,999 MXN era una oferta de urgencia exclusiva del stand. Esta tarifa de $2,499 MXN es el mejor precio que podemos ofrecer fuera del evento, ¡aún así es un gran ahorro!" },
+      { question: "¿Puedo hacer un apartado con esta tarifa?", answer: "No. Para esta oferta de rescate se requiere el pago completo dentro de los 7 días de vigencia para asegurar el precio y el inicio del proyecto." },
+      { question: "¿Incluye los 2 meses de soporte gratis?", answer: "El bono de 2 meses fue exclusivo para quienes apartaron durante el evento. Esta oferta incluye 1 mes de soporte técnico gratuito." }
+    ]
+  },
+  {
+    title: "¡Te Vimos en CaboCON! | Descuento Especial 20%",
+    slug: "reconocimiento-cabocon-descuento",
+    description: "Una promoción exclusiva para todos los asistentes al evento CaboCON. Si nos visitaste o viste nuestro trabajo, utiliza el código **'CABOCON20'** para obtener un descuento directo.",
+    icon: "🎁",
+    image: "/services/banner-cabocon-20percent.jpg",
+    bullets: [
+      "Descuento del **20%** aplicable a **CUALQUIER** servicio de nuestro catálogo (Web, E-commerce, Consultoría, etc.)",
+      "Fácil de Redimir: Solo menciona el código o llena el formulario con el código **'CABOCON20'**.",
+      "Ideal para el desarrollo de Tiendas en Línea, Sitios Avanzados o Consultoría Estratégica.",
+      "Vigencia Extendida: Tienes **20 días naturales** para asegurar tu descuento.",
+      "Aplica 20% de Descuento sobre la tarifa del servicio contratado (el precio base del plan)."
+    ],
+    plans: [
+      {
+        name: "Código de Reconocimiento 'CABOCON20'",
+        description: "Descuento aplicable a cualquier plan: Tienda en Línea, Sitio Web WordPress, Landing Page, Desarrollo a Medida o Consultoría.",
+        price: "¡20% OFF!",
+        specialnote: "Esta promoción no es acumulable con otras ofertas (ej. Paquete CaboCON de $1,999 MXN) y requiere la mención del código al momento de la cotización o contratación.",
+        features: [
+          "**Descuento del 20%** en el costo total del servicio.",
+          "Aplica a **todos** los planes de nuestro catálogo.",
+          "Vigencia de 20 días naturales (a partir del 09 de noviembre).",
+          "**Cotización y Asesoría GRATIS** para definir el servicio que mejor se adapta a ti."
+        ]
+      }
+    ],
+    features: [
+      { label: "Código de Descuento", value: "**CABOCON20**" },
+      { label: "Servicios Incluidos", value: "Todos los servicios (Tienda, Web, Landing, Consultoría, Desarrollo a Medida)" },
+      { label: "Vigencia de la Oferta", value: "20 días naturales (hasta el 28 de noviembre, 2025)" },
+      { label: "Requisito de Uso", value: "Mencionar el código al solicitar la cotización." }
+    ],
+    faq: [
+      { question: "¿Puedo aplicar el 20% al Paquete CABOCON de $1,999 MXN?", answer: "No. Este descuento está diseñado para usarse en nuestros **servicios de tarifa regular** (WordPress, Tienda en Línea, Consultoría, etc.), ya que el paquete CaboCON ya es una oferta promocional." },
+      { question: "¿Cómo se aplica el descuento?", answer: "Solo tienes que mencionar el código **'CABOCON20'** al contactarnos o incluirlo en el formulario de cotización. Nosotros aplicaremos el 20% de reducción en el precio final de tu servicio." },
+      { question: "¿Hasta cuándo tengo para contratar?", answer: "La oferta es válida por 20 días naturales a partir del día siguiente del evento (hasta el 28 de noviembre, 2025). Te recomendamos iniciar la cotización lo antes posible." }
     ]
   },
   {
     title: "Sitio Web WordPress Profesional",
     slug: "wordpress-profesional",
-    description: "Desarrollo de sitios web modernos, seguros y autoadministrables.",
+    description: "Desarrollo de sitios web **modernos, optimizados y fáciles de gestionar** (Autoadministrables). La base perfecta para tu presencia digital.",
     icon: "🌐",
     image: "/services/wordpress-min.jpg",
     bullets: [
-      "Diseño personalizado",
-      "Optimización SEO básica",
-      "Soporte y capacitación"
+      "Identidad Digital Única (Diseño Personalizado)",
+      "Visibilidad en Buscadores (Optimización SEO Inicial)",
+      "Control Total (Sitio Autoadministrable y Capacitación)",
+      "Seguridad y Rendimiento"
     ],
-    price: "Desde $6,500 MXN",
+    price: "Desde $7,000 MXN (Pago Único)",
     plans: [
       {
-        name: "Básico",
-        description: "Sitio institucional de hasta 5 páginas.",
-        price: "$6,500 MXN",
+        name: "Básico: Tarjeta de Presentación Digital",
+        description: "Ideal para negocios que necesitan una **presencia profesional rápida**. Un sitio web **institucional** con la información esencial..",
+        price: "$7,000 MXN",
         features: [
-          "Diseño personalizado",
-          "SEO básico",
-          "Capacitación incluida"
+          "Diseño Personalizado (Enfocado en tu marca)",
+          "Estructura Esencial (Hasta 3 Secciones/Páginas)",
+          "Optimización SEO Inicial (Configuración de títulos y meta-descripciones)",
+          "Formulario de Contacto y Mapa de Ubicación",
+          "Capacitación para administración de contenido",
+          "1 Mes de Soporte Técnico post-lanzamiento"
         ]
       },
       {
-        name: "Pro",
-        description: "Incluye tienda básica y blog.",
+        name: "Pro: Negocio en Crecimiento",
+        description: "El paquete más popular. Perfecto para mostrar un **mayor portafolio de servicios** y generar más interacciones con tus clientes.",
         price: "$11,000 MXN",
         features: [
-          "Todo lo del Básico",
-          "Tienda WooCommerce",
-          "Blog corporativo"
+          "Todo lo incluido en el plan Básico",
+          "Más Contenido (Hasta 5 Secciones/Páginas)",
+          "Integración de Blog (Preparado para crear contenido)",
+          "Galería de Imágenes/Portafolio Dedicado",
+          "Optimización de Velocidad de carga inicial",
+          "1 Mes de Soporte Técnico"
         ]
       },
       {
-        name: "Premium",
-        description: "Hasta 15 páginas, optimización avanzada y soporte extendido.",
+        name: "Premium: Máxima Visibilidad",
+        description: "Diseñado para empresas que buscan **liderar su nicho**. Incluye más secciones y una **estrategia SEO más profunda** para competir.",
         price: "$17,500 MXN",
         features: [
-          "Todo lo del Pro",
-          "Optimización SEO avanzada",
-          "Soporte 6 meses"
+          "Todo lo incluido en el plan Pro",
+          "Sitio Amplio (Hasta 7 Secciones/Páginas)",
+          "Optimización SEO Avanzada (Investigación de palabras clave y estructura de datos)",
+          "Integración de Herramientas de Marketing (ej. Píxeles de seguimiento)",
+          "2 Meses de Soporte Técnico y Actualizaciones iniciales",
+          "Asesoría para Estructura de Contenido"
         ]
       }
     ],
@@ -148,34 +246,39 @@ export const services: Service[] = [
   {
     title: "Tienda en línea (WooCommerce)",
     slug: "tienda-online-woocommerce",
-    description: "Vende productos o servicios con una tienda online robusta y fácil de gestionar.",
+    description: "Vende **productos o servicios 24/7** con una plataforma de e-commerce **robusta, escalable y fácil de gestionar**.",
     icon: "🛒",
     image: "/services/tiendaonline-min.jpg",
     bullets: [
-      "Integración de pagos",
-      "Gestión de inventario",
-      "Reportes de ventas"
+      "Acepta pagos con tarjeta, transferencia y más (Integración de Pasarelas)",
+      "Control total de tu stock y catálogo (Gestión de Inventario)",
+      "Toma decisiones informadas con métricas clave (Reportes de Ventas)"
     ],
-    price: "Desde $13,000 MXN",
+    price: "Desde $13,000 MXN (Pago Único)",
     plans: [
       {
-        name: "Starter",
-        description: "Tienda básica hasta 20 productos.",
+        name: "Starter: Despegue Digital",
+        description: "Ideal para iniciar tu negocio online. **Catálogo limitado** y las funcionalidades esenciales para empezar a vender de inmediato.",
         price: "$13,000 MXN",
         features: [
-          "Pasarelas de pago",
-          "Gestión de productos",
-          "SEO básico"
+          "Pasarelas de Pago (Acepta tarjetas y métodos populares)",
+          "Gestión de Productos (Control de tu catálogo)",
+          "Hasta 20 Productos incluidos en la configuración inicial",
+          "Capacitación Personalizada para que administres tu tienda",
+          "1 Mes de Soporte Técnico post-lanzamiento"
         ]
       },
       {
-        name: "Avanzada",
-        description: "Incluye integraciones y reportes avanzados.",
+        name: "Avanzada: Crecimiento y Control",
+        description: "Perfecto para negocios en crecimiento que necesitan **mayor catálogo**, automatización y **datos avanzados** para optimizar sus ventas..",
         price: "$22,000 MXN",
         features: [
-          "Todo lo de Starter",
-          "Integración con envíos",
-          "Reportes personalizados"
+          "Todo lo incluido en el plan Starter",
+          "Integración con Servicios de Envío (Calcula costos y genera guías)",
+          "Reportes de Ventas Personalizados y segmentados (Mejores métricas)",
+          "Ampliación del Catálogo (Hasta 100 productos)",
+          "2 Meses de Soporte Técnico con prioridad",
+          "Capacitación incluida y manual de usuario"
         ]
       }
     ],
@@ -210,36 +313,42 @@ export const services: Service[] = [
     ]
   },
   {
-    title: "Landing Page de Alto Impacto",
+    title: "Landing Page de Alto Impacto (Generación de Leads)",
     slug: "landing-page-impacto",
-    description: "Páginas diseñadas para captar leads y aumentar conversiones.",
+    description: "Páginas de aterrizaje diseñadas con un único objetivo: **convertir visitantes en prospectos (leads) o clientes**. Optimiza tu inversión en publicidad.",
     icon: "🚀",
     image: "/services/landingpage-min.jpg",
     bullets: [
-      "Diseño enfocado en conversiones",
-      "Integración con formularios",
-      "Optimización para móviles"
+      "Diseño Estratégico (Enfocado 100% en la Conversión)",
+      "Captación de Datos (Integración con Formularios de Leads o CRM)",
+      "Máximo Alcance (Optimización para Móviles y Carga Rápida)"
     ],
-    price: "$4,500 MXN",
+    price: "Desde $4,500 MXN (Pago Único)",
     plans: [
       {
-        name: "Landing única",
-        description: "Página de aterrizaje personalizada.",
+        name: "Estrategia Simple: Generación de Leads",
+        description: "Una landing page **potente y personalizada** para el lanzamiento de un producto, servicio o promoción específica. Lista para atraer prospectos.",
         price: "$4,500 MXN",
         features: [
-          "Diseño responsive",
-          "Integración con formularios",
-          "Optimización SEO"
+          "Diseño de Alto Impacto y 100% responsive",
+          "Estructura de 1 Sección Única con scroll (No 3 páginas)",
+          "Integración Profesional de Formularios (Recibe leads en tu correo o CRM)",
+          "Integración de Píxeles de seguimiento (Facebook, Google Ads)",
+          "Asesoría de Copy (Recomendaciones para el texto de conversión)",
+          "1 Mes de Soporte Técnico post-lanzamiento"
         ]
       },
       {
-        name: "Landing + A/B Testing",
-        description: "Incluye testeo de variantes y reportes.",
+        name: "Estrategia Dual: Optimización A/B Testing",
+        description: "Ideal para campañas publicitarias que buscan **maximizar su retorno de inversión (ROI)**. Creamos variantes para encontrar el diseño más efectivo.",
         price: "$6,500 MXN",
         features: [
-          "Todo lo anterior",
-          "Implementación de pruebas A/B",
-          "Informe de resultados"
+          "Todo lo incluido en el plan 'Estrategia Simple'",
+          "Diseño de 2 Variantes de Landing Page (A y B)",
+          "Implementación de Pruebas A/B (Con herramientas de testeo)",
+          "Informe Detallado de Resultados (Identificación de la variante ganadora y lecciones)",
+          "Asesoría en Optimización Continua",
+          "1 Mes de Soporte Técnico"
         ]
       }
     ],
@@ -263,25 +372,28 @@ export const services: Service[] = [
     ]
   },
   {
-    title: "Mantenimiento y Soporte Web",
+    title: "Mantenimiento y Soporte Web Proactivo",
     slug: "mantenimiento-soporte-web",
-    description: "Mantén tu web segura, actualizada y libre de problemas.",
+    description: "Asegura la **continuidad y seguridad** de tu negocio digital. Olvídate de problemas, fallos y amenazas. Tu sitio **siempre estará al día y en óptimas condiciones**..",
     icon: "🛠️",
     image: "/services/maintenance-support-min.jpg",
     bullets: [
-      "Actualizaciones periódicas",
-      "Backups automáticos",
-      "Soporte técnico prioritario"
+      "Prevención de Fallos (Actualizaciones Periódicas de Código y Plugins)",
+      "Seguridad Total (Backups Automáticos y Monitoreo de Amenazas)",
+      "Asistencia Rápida (Soporte Técnico Prioritario)",
+      "Rendimiento Óptimo (Optimización de Velocidad)"
     ],
+    price: "Cotización Personalizada (Mensual)",
     features: [
-      { label: "Cobertura", value: "WordPress, WooCommerce y sitios estáticos" },
-      { label: "Frecuencia de backups", value: "Diaria o semanal" },
-      { label: "Monitoreo de seguridad", value: "Incluido" },
-      { label: "Tiempo de respuesta", value: "Menos de 24h" },
-      { label: "Soporte", value: "Ilimitado durante el periodo contratado" }
+      { label: "Sitios Cubiertos", value: "WordPress, WooCommerce y Sitios Estáticos" },
+      { label: "Frecuencia de Backups", value: "Diaria (en planes avanzados) o Semanal" },
+      { label: "Monitoreo de Seguridad", value: "24/7 contra Malware e Intrusiones" },
+      { label: "Tiempo de Respuesta", value: "Prioritario (Garantía de respuesta en menos de 4 horas hábiles)" },
+      { label: "Soporte Incluido", value: "Técnico y de Contenido (Ilimitado durante el periodo contratado)" },
+      { label: "Reporte", value: "Mensual detallado de actividades y seguridad" }
     ],
     gallery: [
-      
+
     ],
     testimonials: [
       { quote: "Nunca más he tenido problemas de caídas o hackeos.", author: "Administrador de portal" },
@@ -294,279 +406,239 @@ export const services: Service[] = [
     ]
   },
   {
-    title: "Desarrollo a Medida",
+    title: "Desarrollo de Software y Sistemas a Medida",
     slug: "desarrollo-a-medida",
-    description: "Soluciones personalizadas en WordPress, Astro, Svelte, Vue, Laravel y más.",
+    description: "Transformamos tus necesidades de negocio en **soluciones digitales únicas, eficientes y escalables**. Desde módulos especializados hasta sistemas completos (ERP/CRM lite).",
     icon: "💡",
     image: "/services/customdevelopment-min.jpg",
     bullets: [
-      "Funcionalidad a la medida",
-      "Integraciones avanzadas",
-      "Escalabilidad garantizada"
+      "Funcionalidad Única (Solución 100% Adaptada a tu Proceso)",
+      "Conexión con tu Ecosistema (Integraciones Avanzadas y APIs)",
+      "Listo para Crecer (Diseño Modular y Escalabilidad Garantizada)"
     ],
-    price: "A cotizar",
+    price: "Cotización Personalizada (Basado en Horas/Alcance)",
     plans: [
       {
-        name: "Desarrollo básico",
-        description: "Funcionalidad personalizada simple (formularios, landings, etc.)",
+        name: "Módulo Básico y Optimización",
+        description: "Desarrollo de funcionalidades específicas y acotadas (ej. Calculadoras personalizadas, Módulos de gestión simples, Mejoras de rendimiento).",
         price: "Desde $7,000 MXN"
       },
       {
-        name: "Desarrollo avanzado",
-        description: "Integraciones, dashboards, portales, APIs, etc.",
+        name: "Sistema Completo y Arquitectura",
+        description: "Construcción de sistemas robustos, Portales de Clientes/Proveedores, Integración con múltiples plataformas o desarrollo de Backends y APIs.",
         price: "A cotizar"
       }
     ],
     features: [
-      { label: "Lenguajes/Frameworks", value: "WordPress, Astro, Svelte, Vue, Laravel, Node.js" },
-      { label: "Integraciones", value: "APIs, pagos, CRMs, ERPs" },
-      { label: "Soporte", value: "A medida del proyecto" },
-      { label: "Documentación", value: "Incluida" },
-      { label: "Metodología", value: "Ágil, entregas iterativas" }
+      { label: "Tecnologías y Frameworks", value: "WordPress (Avanzado), Astro, Svelte, Vue, Laravel, Node.js y más. Utilizamos la pila tecnológica adecuada." },
+      { label: "Integraciones Críticas", value: "Conexión a APIs propias y de terceros, Pasarelas de Pago, CRMs, ERPs, Sistemas de Logística" },
+      { label: "Metodología de Trabajo", value: "Ágil (Scrum/Kanban), con entregas iterativas y revisión constante" },
+      { label: "Garantía", value: "Periodo de corrección de errores (Bug fixing) incluido post-lanzamiento" },
+      { label: "Entrega", value: "ÁCódigo limpio, Documentación Técnica y Capacitación del Sistema" }
     ],
     gallery: [
       "/projects/customdevelopment/saboracabo-min.png",
       "/projects/customdevelopment/bellaterraloscabos-min.png"
     ],
     testimonials: [
-      { quote: "El desarrollo fue justo lo que necesitábamos, ¡gran trabajo!", author: "Startup tecnológica" },
-      { quote: "Excelente comunicación y resultados a tiempo.", author: "Director de IT" }
+      { quote: "El desarrollo superó las expectativas y fue justo la herramienta que necesitábamos para automatizar el proceso de ventas.", author: "CEO, Startup tecnológica" },
+      { quote: "Excelente comunicación, metodología clara y resultados entregados a tiempo. Un socio estratégico confiable.", author: "Director de IT, Pyme digital" }
     ],
     faq: [
-      { question: "¿Puedo solicitar cualquier funcionalidad?", answer: "Sí, analizamos tu requerimiento y te asesoramos en la mejor solución." },
-      { question: "¿Incluye soporte post-lanzamiento?", answer: "Sí, ofrecemos distintos planes de soporte según tu necesidad." }
-    ]
-  },
-  {
-    title: "Optimización SEO y Velocidad",
-    slug: "optimizacion-seo-velocidad",
-    description: "Mejora el posicionamiento y la rapidez de tu web para atraer más clientes.",
-    icon: "⚡",
-    image: "/services/seo-min.jpg",
-    bullets: [
-      "Auditoría SEO completa",
-      "Optimización de carga",
-      "Mejores prácticas técnicas"
-    ],
-    price: "Desde $5,500 MXN",
-    plans: [
-      {
-        name: "Básico",
-        description: "Optimización de velocidad y ajustes básicos.",
-        price: "$5,500 MXN",
-        features: [
-          "Optimización de velocidad",
-          "Ajustes SEO básicos",
-          "Informe de resultados"
-        ]
-      },
-      {
-        name: "Completo",
-        description: "Optimización completa con seguimiento.",
-        price: "$8,500 MXN",
-        features: [
-          "Optimización completa",
-          "Informe detallado",
-          "Seguimiento 1 mes"
-        ]
-      }
-    ],
-    features: [
-      { label: "Tipo de optimización", value: "SEO técnico, On-page, velocidad de carga" },
-      { label: "Herramientas usadas", value: "Google PageSpeed, GTmetrix, SEMrush" },
-      { label: "Informe de resultados", value: "Incluido" },
-      { label: "Soporte", value: "1 mes post-servicio" }
-    ],
-    gallery: [
-      
-    ],
-    testimonials: [
-      { quote: "Nuestra web ahora carga en segundos y subimos posiciones en Google.", author: "Empresa de servicios" }
-    ],
-    faq: [
-      { question: "¿Sirve para cualquier tipo de web?", answer: "Sí, analizamos y optimizamos sitios WordPress, tiendas y páginas estáticas." },
-      { question: "¿Incluye reporte de mejoras?", answer: "Sí, recibirás un informe detallado antes y después del servicio." }
+      { question: "¿Qué tipos de proyectos desarrollan?", answer: "Cualquier proyecto que requiera lógica de negocio específica: desde sistemas internos, automatizaciones, APIs, hasta portales o extensiones para tu sitio web." },
+      { question: "¿Cómo se define el precio?", answer: "El precio se define en base al alcance del proyecto y las horas de desarrollo estimadas. Iniciamos con una fase de análisis y levantamiento de requerimientos." }
     ]
   },
   {
     title: "Consultoría y Asesoría Web",
     slug: "consultoria-asesoria-web",
-    description: "Resuelve dudas y mejora tu estrategia digital con expertos.",
+    description: "Resuelve dudas y obtén **claridad, dirección y un plan de acción** para tu proyecto digital. Te ayudamos a resolver problemas complejos y a **tomar las decisiones estratégicas** correctas.",
     icon: "🎯",
     image: "/services/consultingservices-min.jpg",
     bullets: [
-      "Diagnóstico profesional",
-      "Recomendaciones personalizadas",
-      "Acompañamiento estratégico"
+      "Diagnóstico y Auditoría (Identificación profesional de áreas de mejora)",
+      "Ruta de Acción (Recomendaciones y Prioridades Personalizadas)",
+      "Toma de Decisiones (Acompañamiento Estratégico y Técnico)"
     ],
     price: "Desde $1,800 MXN",
     plans: [
       {
-        name: "Sesión única",
-        description: "Consultoría puntual para resolver dudas específicas.",
+        name: "Sesión Estratégica Rápida",
+        description: "Perfecto para **resolver un cuello de botella o una duda específica** de forma inmediata. Enfocado en obtener una solución viable en 60 minutos.",
         price: "$1,800 MXN",
         features: [
-          "1 hora de consultoría",
-          "Recomendaciones personalizadas",
-          "Informe posterior"
+          "1 Hora de Consultoría 1 a 1 (Vía Zoom/Google Meet)",
+          "Recomendaciones Inmediatas y Plan de Acción Rápido",
+          "Informe Digital de la Sesión (Resumen de temas y acuerdos)",
+          "Modalidad: Online o Presencial (Según disponibilidad)"
         ]
       },
       {
-        name: "Paquete mensual",
-        description: "Acompañamiento continuo para tu proyecto digital.",
+        name: "Acompañamiento Estratégico Mensual",
+        description: "Un experto a tu lado de forma continua. Ideal para **lanzamientos, optimización de campañas o gestión de proyectos complejos** a largo plazo.",
         price: "$5,000 MXN",
         features: [
-          "4 sesiones",
-          "Seguimiento semanal",
-          "Soporte por WhatsApp"
+          "4 Sesiones de 1 Hora (Una por semana para un avance constante)",
+          "Seguimiento y Revisión de Tareas entre sesiones",
+          "Soporte de Dudas por WhatsApp/Telegram (Prioritario)",
+          "Enfoque en Resultados Medibles (KPIs)"
         ]
       }
     ],
     features: [
-      { label: "Modalidad", value: "Online o presencial" },
-      { label: "Duración", value: "Sesiones de 1h o paquetes mensuales" },
-      { label: "Informe de sesión", value: "Incluido" },
-      { label: "Seguimiento", value: "Opcional" }
+      { label: "Especialidades", value: "SEO/SEM, Arquitectura Web, Estrategia de Contenido, E-commerce, Migraciones" },
+      { label: "Modalidad de Encuentro", value: "Online (Recomendado) o Presencial (Sujeto a ubicación)" },
+      { label: "Entrega", value: "Informe escrito con las conclusiones y pasos a seguir, incluido en todas las sesiones" },
+      { label: "Valor Añadido", value: "Revisión previa de materiales para optimizar el tiempo de la sesión" }
     ],
     gallery: [
-      
+
     ],
     testimonials: [
-      { quote: "Las sesiones de consultoría nos ayudaron a definir una estrategia clara.", author: "Gerente de marketing" }
+      { quote: "Las sesiones de consultoría no solo resolvieron nuestras dudas técnicas, sino que nos ayudaron a definir una estrategia clara que ha aumentado nuestro tráfico orgánico.", author: "Gerente de Marketing, Pyme digital" }
     ],
     faq: [
-      { question: "¿Puedo contratar solo una sesión?", answer: "Sí, puedes solicitar sesiones únicas o paquetes según tu necesidad." },
-      { question: "¿Incluye análisis de mi web?", answer: "Sí, revisamos tu web y te damos recomendaciones personalizadas." }
+      { question: "¿Qué incluye el informe posterior a la sesión?", answer: "El informe documenta los puntos clave discutidos, las recomendaciones específicas y el plan de acción acordado para que tengas una guía de implementación." },
+      { question: "¿La consultoría es solo para WordPress?", answer: "No. Ofrecemos asesoría estratégica en diversas plataformas y tecnologías (SEO, e-commerce, arquitectura de sistemas) para cualquier tipo de proyecto digital." }
     ]
   },
   {
-    title: "Migraciones y Rescate Web",
+    title: "Migraciones, Rescate y Ciberseguridad",
     slug: "migraciones-rescate-web",
-    description: "Recupera o migra tu sitio sin perder información ni posicionamiento.",
+    description: "Servicios críticos para tu sitio: **Migración sin interrupciones** (a nuevo hosting o dominio) y **limpieza de sitios hackeados** o con malware. ¡Tu SEO está a salvo!",
     icon: "🔄",
     image: "/services/webbackup-min.jpg",
     bullets: [
-      "Migración segura",
-      "Recuperación de sitios hackeados",
-      "Preservación de SEO"
+      "Transición Cero-Riesgo (Migración Segura y Monitorizada)",
+      "Solución de Crisis (Recuperación y Limpieza de Sitios Hackeados)",
+      "Blindaje de Posicionamiento (Preservación Total del SEO)",
+      "Activación Rápida (Garantía de Tiempo de Inactividad Mínimo)"
     ],
     price: "Desde $3,500 MXN",
     plans: [
       {
-        name: "Básica",
-        description: "Migración de contenido y configuración básica.",
+        name: "Migración Express (Hosting/Dominio)",
+        description: "Traslado seguro de tu sitio web a un nuevo servidor o dominio. Enfocado en la **integridad de datos** y la **continuidad operativa**.",
         price: "$3,500 MXN",
         features: [
-          "Migración de contenido",
-          "Preservación de SEO",
-          "Configuración básica"
+          "Migración Técnica de archivos y base de datos (10GB máx.)",
+          "Revisión y Configuración Básica Post-Traslado",
+          "Garantía de Preservación de URLs y Metadatos (SEO)",
+          "Tiempo de Inactividad (Downtime) Mínimo",
+          "Análisis de Seguridad Inicial (Escaneo de amenazas)"
         ]
       },
       {
-        name: "Completa",
-        description: "Migración completa con optimización y soporte.",
-        price: "$7,500 MXN",
+        name: "Rescate y Reestructuración PRO",
+        description: "Ideal para la **limpieza de malware**, sitios hackeados o migraciones complejas (ej. a CMS o plataformas distintas). Incluye optimización y blindaje.",
+        price: "Desde $7,500 MXN",
         features: [
-          "Migración completa",
-          "Optimización",
-          "Soporte post-migración"
+          "Todo lo incluido en el plan 'Express'",
+          "Limpieza de Malware y Eliminación de Código Malicioso",
+          "Reestructuración de Bases de Datos y Optimización de Velocidad",
+          "Configuración de Seguridad Avanzada (Firewall, Backups automáticos)",
+          "Reporte Post-Rescate y Plan de Prevención",
+          "1 Mes de Soporte Técnico Post-Trabajo"
         ]
       }
     ],
     features: [
-      { label: "Tipos de migración", value: "WordPress, WooCommerce, sitios estáticos" },
-      { label: "Preservación de datos", value: "Sí, garantizamos la integridad de tu información" },
-      { label: "Soporte post-migración", value: "1 mes incluido" },
-      { label: "Análisis de seguridad", value: "Incluido" }
+      { label: "Especialización", value: "WordPress, WooCommerce, Sitios Estáticos y Migraciones entre CMS comunes" },
+      { label: "Garantía de Datos", value: "Integridad de la Información y Contenido 100% garantizada" },
+      { label: "Garantía de SEO", value: "Implementación de Redirecciones 301 para proteger tu posicionamiento" },
+      { label: "Tiempo de Respuesta", value: "Servicio de Rescate y Limpieza con Atención Prioritaria" }
     ],
     gallery: [
-      
+
     ],
     testimonials: [
-      { quote: "Recuperamos nuestro sitio web sin perder datos ni SEO.", author: "Dueño de sitio web" }
+      { quote: "Gracias a su intervención, recuperamos nuestro sitio hackeado en menos de 24 horas sin perder datos cruciales ni impacto en nuestro ranking de Google.", author: "Jackie B. - Marketing Bellaterra Los Cabos" }
     ],
     faq: [
-      { question: "¿Puedo migrar mi sitio yo mismo?", answer: "Sí, pero recomendamos nuestro servicio para evitar pérdidas de datos o SEO." },
-      { question: "¿Incluye soporte técnico?", answer: "Sí, te ayudamos en cualquier problema técnico post-migración." }
+      { question: "¿Cuánto tiempo tarda una migración estándar?", answer: "Una migración sencilla (plan Express) suele completarse en menos de 24 horas, minimizando al máximo el tiempo de inactividad de tu sitio." },
+      { question: "¿Qué pasa si mi sitio está hackeado?", answer: "El plan 'Rescate PRO' incluye una limpieza profunda de código, eliminación de malware, y un análisis para prevenir futuros ataques." }
     ]
   },
   {
-    title: "Renta de equipo de cómputo",
+    title: "Renta de Equipo de Cómputo Profesional",
     slug: "renta-equipo-computo",
-    description: "Renta de laptops para eventos, oficinas temporales o necesidades puntuales. Equipos confiables y listos para usar.",
+    description: "Soluciones de cómputo **rápidas y confiables** para eventos, oficinas temporales, *home office* o necesidades de alta demanda en Los Cabos. Equipos listos para trabajar.",
     icon: "💻",
     image: "/services/renta-laptops-min.jpg",
     bullets: [
-      "Laptops listas para usar",
-      "Precios por día",
-      "Opciones para diferentes necesidades"
+      "Equipos de Última Generación (Listos para usar con software básico)",
+      "Flexibilidad Total (Renta por Día, Semana o Mes)",
+      "Logística Incluida (Entrega, Recolección y Soporte en Los Cabos)",
+      "Variedad de Opciones (Windows y Apple para cada necesidad)",
+      "Tarifas especiales: Obtén un 11% de descuento al rentar 3+ días o 5+ equipos."
     ],
-    price: "Desde $900 MXN por día",
+    price: "Desde $900 MXN por día (Tarifas especiales por volumen)",
     plans: [
       {
-        name: "Laptop dual core AMD",
-        description: "Equipo básico para tareas de oficina y navegación.",
+        name: "Básico: Tareas de Oficina",
+        description: "El equipo esencial para tareas administrativas, puntos de venta, registros de evento y navegación web.",
         price: "$900 MXN por día",
         features: [
-          "Procesador dual core AMD",
-          "4GB RAM / 128GB SSD",
-          "Windows 10 o superior"
+          "**Procesador** Dual Core o equivalente moderno (Rendimiento estable)",
+          "**Memoria/Almacenamiento** 4GB RAM / 128GB SSD",
+          "Sistema Operativo: Windows 10/11",
+          "Incluye **Paquetería** y Antivirus"
         ]
       },
       {
-        name: "Laptop I5/R5",
-        description: "Equipo intermedio para productividad y multitarea.",
+        name: "Productividad: Intermedio Rápido",
+        description: "Ideal para reuniones, trabajo multitarea, y profesionales que requieren más velocidad y mejor rendimiento.",
         price: "$1,300 MXN por día",
         features: [
-          "Intel Core i5 o Ryzen 5",
-          "8GB RAM / 256GB SSD",
-          "Windows 10/11"
+          "**Procesador** Intel Core i5 o AMD Ryzen 5",
+          "**Memoria/Almacenamiento** 8GB RAM / 256GB SSD (Velocidad mejorada)",
+          "Sistema Operativo: Windows 10/11",
+          "Perfecto para **Videoconferencias y Suites de Negocio**"
         ]
       },
       {
-        name: "Laptop de alto rendimiento i7+",
-        description: "Ideal para tareas exigentes, edición o desarrollo.",
+        name: "Alto Rendimiento: Edición y Desarrollo",
+        description: "Máxima potencia. Diseñado para tareas exigentes como edición de video/foto, desarrollo de software, o simulaciones en eventos.",
         price: "$2,000 MXN por día",
         features: [
-          "Intel Core i7 o superior",
-          "16GB RAM / 512GB SSD",
-          "Gráficos dedicados (según modelo)"
+          "**Procesador** Intel Core i7 (o equivalente superior)",
+          "**Memoria/Almacenamiento** 16GB RAM / 512GB SSD",
+          "**Gráficos dedicados** (Según modelo, para tareas visuales)",
+          "Ideal para **Software de Diseño (Adobe) y Multitarea Pesada**"
         ]
       },
       {
-        name: "Laptop Apple Macbook Pro i7",
-        description: "Potencia y diseño para usuarios Apple.",
+        name: "Especializado: Apple MacBook Pro",
+        description: "Potencia, diseño y compatibilidad macOS para creativos, desarrolladores y usuarios avanzados de la plataforma Apple.",
         price: "$2,500 MXN por día",
         features: [
-          "Apple Macbook Pro i7",
-          "16GB RAM / 512GB SSD",
-          "macOS"
+          "**Modelo** Apple MacBook Pro (Chip i7 o equivalente)",
+          "**Memoria/Almacenamiento** 16GB RAM / 512GB SSD",
+          "Sistema Operativo: macOS (Última versión disponible)",
+          "**Incluye Adaptadores** esenciales (USB-C/HDMI)"
         ]
       }
     ],
     features: [
-      { label: "Entrega y recolección", value: "Incluidas en Los Cabos" },
-      { label: "Soporte técnico", value: "Durante el periodo de renta" },
-      { label: "Accesorios", value: "Cargador y funda incluidos" }
+      { label: "Entrega y Recolección", value: "**Sin costo** dentro de la zona de Los Cabos (Cabo San Lucas y San José del Cabo)" },
+      { label: "Soporte Técnico", value: "**Reemplazo Inmediato** de equipo en caso de falla durante el periodo de renta" },
+      { label: "Software Incluido", value: "Windows o macOS, Office Básico (o Suite de Productividad) y Antivirus" },
+      { label: "Flexibilidad de Plazo", value: "Tarifas preferenciales por **semana o mes**" }
     ],
     gallery: [
       "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80",
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80"
     ],
     testimonials: [
-      { quote: "La laptop funcionó perfecto para nuestro evento.", author: "Organizador de evento" },
-      { quote: "Excelente servicio y equipos en buen estado.", author: "Cliente frecuente" }
+      { quote: "La logística de entrega y recolección fue impecable. La laptop funcionó perfectamente para nuestro evento de tres días. ¡Servicio de 5 estrellas!", author: "Organizador de Evento Corporativo" },
+      { quote: "Excelente servicio, los equipos siempre en óptimas condiciones y el soporte técnico es inmediato. Son nuestros proveedores de cabecera en Los Cabos.", author: "Gerente Administrativo" }
     ],
     faq: [
-      { question: "¿Incluye software?", answer: "Incluye software básico (Office, navegador, antivirus)." },
-      { question: "¿Se requiere depósito?", answer: "Sí, se solicita un depósito reembolsable según el equipo." },
-      { question: "¿Puedo rentar por más de un día?", answer: "Sí, tenemos tarifas preferenciales por semana o mes." },
-      { question: "¿Cuáles son las formas de pago disponibles?", answer: "Aceptamos transferencia bancaria, tarjetas de crédito/débito y pagos en efectivo en Los Cabos." },
-      { question: "¿Puedo solicitar factura?", answer: "Sí, emitimos factura electrónica (CFDI) para todos nuestros servicios. Solicítala al momento de tu pago." },
-      { question: "¿Qué pasa si el equipo presenta fallas?", answer: "Reemplazamos el equipo sin costo extra durante el periodo de renta." },
-      { question: "¿Ofrecen entrega y recolección a domicilio?", answer: "Sí, el servicio incluye entrega y recolección en Los Cabos sin costo adicional." },
-      { question: "¿El equipo viene listo para usar?", answer: "Sí, entregamos los equipos configurados y con software básico listo para trabajar." },
-      { question: "¿Puedo rentar varios equipos a la vez?", answer: "Sí, puedes solicitar la cantidad que necesites, sujeto a disponibilidad." }
+      { question: "¿Incluye software adicional?", answer: "Incluye software básico (Office o equivalente, navegador, antivirus). Se puede solicitar la instalación de software específico con cargo adicional." },
+      { question: "¿Se requiere depósito de seguridad?", answer: "Sí, se solicita un depósito reembolsable cuya cantidad varía según el valor del equipo rentado. Este se detalla en la cotización." },
+      { question: "¿Hay tarifas preferenciales por renta extendida?", answer: "Sí, ofrecemos tarifas significativamente más bajas para rentas por semana o mes. Contáctanos para una cotización a largo plazo." },
+      { question: "¿Qué pasa si el equipo presenta fallas técnicas?", answer: "Garantizamos el **reemplazo inmediato** del equipo sin costo extra durante el periodo de renta, asegurando la continuidad de tu trabajo." },
+      { question: "¿Puedo solicitar factura electrónica (CFDI)?", answer: "Sí, emitimos factura electrónica (CFDI) para todos nuestros servicios. Por favor, solicita tu factura al momento de confirmar el pago." }
     ]
   }
 ];
