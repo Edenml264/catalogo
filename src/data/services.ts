@@ -383,13 +383,56 @@ export const services: Service[] = [
       "Asistencia Rápida (Soporte Técnico Prioritario)",
       "Rendimiento Óptimo (Optimización de Velocidad)"
     ],
-    price: "Cotización Personalizada (Mensual)",
+    price: "Desde $1,900 MXN / mes",
+    plans: [
+      {
+        name: "Básico: Esencial",
+        description: "Ideal para Landing Pages, Sitios Institucionales y blogs. Mantenimiento preventivo que garantiza la **seguridad y operatividad básica**.",
+        price: "$1,900 MXN / mes",
+        features: [
+          "Backups Semanales (Almacenamiento en la Nube)",
+          "Actualizaciones Mensuales de Plugins, Temas y Núcleo de WordPress",
+          "Monitoreo de Seguridad Básico y Anti-Malware",
+          "Reporte Mensual de Actividades y Rendimiento",
+          "30 Minutos de cambios de contenido menores/mes (No acumulables)",
+          "Garantía de Respuesta: 24 Horas Hábiles"
+        ]
+      },
+      {
+        name: "Pro: Estratégico (Recomendado)",
+        description: "Nuestro plan más popular. Perfecto para PyMEs y Sitios Corporativos. Incluye **soporte proactivo, optimización de velocidad y horas de desarrollo**.",
+        price: "$4,500 MXN / mes",
+        features: [
+          "Todo lo incluido en el plan Básico",
+          "Backups Diarios (Histórico de 30 días)",
+          "Actualizaciones Semanales (Revisión y aplicación de parches de seguridad)",
+          "Monitoreo de Amenazas 24/7 y Firewall de Aplicación Web (WAF)",
+          "Optimización Mensual de Base de Datos y Caché Avanzada",
+          "1 Hora de desarrollo/cambios de contenido/mes (No acumulables)",
+          "Garantía de Respuesta Prioritaria: 4 Horas Hábiles"
+        ]
+      },
+      {
+        name: "E-commerce: Premium 24/7",
+        description: "Diseñado para Tiendas en Línea y Sistemas Críticos. Máxima prioridad y monitoreo constante para **prevenir pérdidas por caídas del sistema**.",
+        price: "$7,500 MXN / mes",
+        features: [
+          "Todo lo incluido en el plan Pro",
+          "Backups Cada 12 Horas (Histórico de 60 días)",
+          "Actualizaciones Diarias (En horario de bajo tráfico)",
+          "Seguridad de Nivel Empresarial y Monitoreo de Integridad de Archivos",
+          "Monitoreo y Pruebas Mensuales de Pasarelas de Pago/Carrito",
+          "2 Horas de desarrollo y soporte prioritario/mes (No acumulables)",
+          "Garantía de Respuesta Crítica: 1 Hora Hábil (30 minutos para fallos mayores)"
+        ]
+      }
+    ],
     features: [
       { label: "Sitios Cubiertos", value: "WordPress, WooCommerce y Sitios Estáticos" },
-      { label: "Frecuencia de Backups", value: "Diaria (en planes avanzados) o Semanal" },
-      { label: "Monitoreo de Seguridad", value: "24/7 contra Malware e Intrusiones" },
-      { label: "Tiempo de Respuesta", value: "Prioritario (Garantía de respuesta en menos de 4 horas hábiles)" },
-      { label: "Soporte Incluido", value: "Técnico y de Contenido (Ilimitado durante el periodo contratado)" },
+      { label: "Frecuencia de Backups", value: "Semanal a Cada 12 Horas (Depende del plan)" },
+      { label: "Monitoreo de Seguridad", value: "24/7 contra Malware y Amenazas (WAF incluido en planes Pro+)" },
+      { label: "Tiempo de Respuesta", value: "Prioritario (Garantía de respuesta de 24 horas a 1 hora, según el plan)" },
+      { label: "Horas de Desarrollo/Soporte", value: "Incluidas en todos los planes para cambios de contenido y desarrollo menor" },
       { label: "Reporte", value: "Mensual detallado de actividades y seguridad" }
     ],
     gallery: [
@@ -400,9 +443,42 @@ export const services: Service[] = [
       { quote: "El soporte responde rápido y siempre soluciona.", author: "Pyme digital" }
     ],
     faq: [
-      { question: "¿Incluye restauración ante fallos?", answer: "Sí, restauramos tu sitio desde backups en caso de problemas." },
-      { question: "¿El soporte cubre cambios de contenido?", answer: "Incluye cambios menores y asistencia técnica general." },
-      { question: "¿Puedo cancelar en cualquier momento?", answer: "Sí, sin penalización." }
+      {
+    question: "¿Por qué necesito un plan de mantenimiento si mi sitio ya está terminado?",
+    answer: "El mantenimiento es crucial porque los sitios web requieren actualizaciones constantes de software (WordPress, plugins y temas) para protegerse de vulnerabilidades de seguridad y asegurar la compatibilidad. Sin mantenimiento, su sitio corre el riesgo de ser atacado o fallar después de una actualización mayor."
+  },
+  {
+    question: "¿El servicio incluye la corrección de fallos o errores?",
+    answer: "Sí. Nuestros planes incluyen la **restauración inmediata** de su sitio desde el último backup en caso de fallos críticos. La corrección de errores de código que no sean resultado de actualizaciones o fallos de seguridad se cubrirá con las horas de soporte incluidas en su plan."
+  },
+  {
+    question: "¿Qué pasa si se agotan mis minutos/horas de soporte incluidas?",
+    answer: "Si requiere más cambios o desarrollo una vez agotadas las horas de su plan, el trabajo se cotizará y facturará por separado a nuestra tarifa preferencial por hora. Siempre le notificaremos antes de exceder el tiempo incluido para que mantenga el control total de los costos."
+  },
+  {
+    question: "¿Puedo acumular las horas de desarrollo/soporte de un mes a otro?",
+    answer: "No. Las horas de soporte y desarrollo incluidas en cada plan están diseñadas para un uso mensual proactivo. Si no se utilizan dentro del mes, las horas no son acumulables para el siguiente periodo. Esto nos permite garantizar un servicio consistente y una disponibilidad óptima para todos nuestros clientes."
+  },
+  {
+    question: "¿Mi plan de mantenimiento incluye el costo de Hosting o Licencias Premium?",
+    answer: "No. El costo de Hosting y las licencias de software de pago (ej. constructor de páginas o plugins especializados) son gastos externos que deben ser pagados directamente por el cliente. Nosotros nos encargamos de gestionarlos, actualizarlos y aplicarlos correctamente."
+  },
+  {
+    question: "¿Qué plataformas cubren sus planes de mantenimiento?",
+    answer: "Nuestros planes cubren principalmente sitios desarrollados en **WordPress** (incluyendo Tiendas con WooCommerce) y también podemos ofrecer soporte para sitios estáticos o de otras tecnologías, previa auditoría técnica."
+  },
+  {
+    question: "¿El soporte cubre cambios de contenido o diseño en mi sitio?",
+    answer: "Sí, nuestros planes incluyen horas específicas (30 min, 1h o 2h, según el plan) que puede utilizar para cambios de texto, subir imágenes, modificar menús o realizar tareas de desarrollo menor. Los proyectos de diseño o funcionalidad nuevos se cotizan aparte."
+  },
+  {
+    question: "¿Cuál es el proceso si mi sitio es hackeado?",
+    answer: "Actuamos inmediatamente. Gracias al monitoreo 24/7 (en planes Pro y E-commerce), detectamos amenazas al instante. El proceso incluye: **1) Aislamiento**, **2) Limpieza profunda** de malware y, **3) Restauración** desde un backup limpio para minimizar el tiempo de inactividad. Esta asistencia está incluida en su plan."
+  },
+  {
+    question: "¿Puedo cancelar el servicio en cualquier momento?",
+    answer: "Sí. Todos nuestros planes de mantenimiento se contratan de forma mensual sin plazos forzosos. Puede cancelar en cualquier momento notificándonos con 30 días de antelación sin ninguna penalización."
+  }
     ]
   },
   {
