@@ -137,7 +137,7 @@ npm run build
 ```
 
 ## Contacto y soporte
-- **Correo**: info@sionline.com.mx
+- **Correo**: emendez@sionline.com.mx
 - **Teléfono**: 624-166-5588
 - **Ubicación**: Country del Mar, San Jose del Cabo, BCS, México
 
